@@ -1,5 +1,6 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
 import SettingsPanel from "./components/settings/SettingsPanel";
-import { React } from "./lib/react";
 import "./index.css";
 
 function App() {
@@ -13,5 +14,6 @@ function App() {
 
 const container = document.getElementById("my-plugin-app");
 if (container) {
-  wp.element.render(<App />, container);
+  const root = createRoot(container);
+  root.render(<App />);
 }

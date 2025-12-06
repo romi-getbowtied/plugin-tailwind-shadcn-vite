@@ -33,8 +33,6 @@ class MyPlugin_Admin {
             return;
         }
 
-        wp_enqueue_script('wp-element');
-
         wp_enqueue_style(
             'myplugin-style',
             MYPLUGIN_URL . 'assets/plugin.css',
@@ -45,7 +43,7 @@ class MyPlugin_Admin {
         wp_enqueue_script(
             'myplugin-script',
             MYPLUGIN_URL . 'assets/plugin.js',
-            ['wp-element'],
+            [],
             self::get_asset_version('plugin.js'),
             true
         );
