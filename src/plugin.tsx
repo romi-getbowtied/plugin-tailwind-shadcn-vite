@@ -1,3 +1,4 @@
+import * as React from "react";
 import { createRoot } from "react-dom/client";
 import "@/lib/portal-patch"; // Apply global portal patch
 import { Button } from "@/components/ui/button";
@@ -21,6 +22,9 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
+import { Switch } from "@/components/ui/switch";
 import "./plugin.css";
 
 // --- Components for Islands ---
@@ -162,12 +166,58 @@ function DropdownMenuIsland() {
 	);
 }
 
+function SonnerButtonIsland() {
+	return (
+		<div className="flex gap-2">
+			<Button
+				onClick={() => toast.success("Success!", { description: "Your action was completed successfully." })}
+			>
+				Success Toast
+			</Button>
+			<Button
+				variant="destructive"
+				onClick={() => toast.error("Error!", { description: "Something went wrong." })}
+			>
+				Error Toast
+			</Button>
+			<Button
+				variant="outline"
+				onClick={() => toast.info("Info", { description: "Here's some information." })}
+			>
+				Info Toast
+			</Button>
+		</div>
+	);
+}
+
+function SwitchIsland() {
+	const [enabled, setEnabled] = React.useState(false);
+	
+	return (
+		<div className="flex items-center gap-4">
+			<label htmlFor="switch-demo" className="text-sm font-medium">
+				Enable notifications
+			</label>
+			<Switch
+				id="switch-demo"
+				checked={enabled}
+				onCheckedChange={(checked) => {
+					setEnabled(checked);
+					toast.success(checked ? "Notifications enabled" : "Notifications disabled");
+				}}
+			/>
+		</div>
+	);
+}
+
 // --- Island Mounting Logic ---
 
 const islands = {
 	"theme-toggle": ThemeToggle,
 	"navigation-menu": NavigationMenuIsland,
 	"dropdown-menu": DropdownMenuIsland,
+	"sonner-button": SonnerButtonIsland,
+	"switch": SwitchIsland,
 };
 
 // Mount each island independently
@@ -177,3 +227,12 @@ Object.entries(islands).forEach(([key, Component]) => {
 		createRoot(el).render(<Component />);
 	});
 });
+
+// Mount Toaster globally (only once)
+const appContainer = document.getElementById("tw-plugin-app");
+if (appContainer && !appContainer.querySelector("[data-sonner-toaster]")) {
+	const toasterContainer = document.createElement("div");
+	toasterContainer.id = "sonner-toaster";
+	appContainer.appendChild(toasterContainer);
+	createRoot(toasterContainer).render(<Toaster position="top-center" />);
+}

@@ -84,6 +84,16 @@ class Tailwind_Scoped_Plugin {
 						<!-- Dynamic Dropdown Menu Island -->
 						<div data-island="dropdown-menu"></div>
 					</div>
+
+					<!-- Sonner Toast Buttons -->
+					<div class="pt-4">
+						<div data-island="sonner-button"></div>
+					</div>
+
+					<!-- Switch Component -->
+					<div class="pt-4">
+						<div data-island="switch"></div>
+					</div>
 					
 				</div>
 			</div>
