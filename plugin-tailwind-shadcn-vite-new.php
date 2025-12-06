@@ -42,7 +42,7 @@ class Tailwind_Scoped_Plugin {
 		
 		// Fix: Dequeue 'svg-painter' to prevent console errors on this custom React page.
 		// This script depends on DOM elements/globals that might be absent or conflicting.
-		//wp_dequeue_script('svg-painter');
+		wp_dequeue_script('svg-painter');
 	}
 	
 	public function render_admin_page() {
