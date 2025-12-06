@@ -1,1 +1,0 @@
-# plugin-tailwind-shadcn-vite
