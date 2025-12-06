@@ -13,7 +13,6 @@ require_once plugin_dir_path(__FILE__) . "includes/class-admin.php";
 require_once plugin_dir_path(__FILE__) . "includes/class-rest.php";
 require_once plugin_dir_path(__FILE__) . "includes/class-ajax.php";
 require_once plugin_dir_path(__FILE__) . "includes/class-settings.php";
-require_once plugin_dir_path(__FILE__) . "includes/helpers.php";
 
 // Init backend systems
 MyPlugin_Admin::init();

@@ -24,31 +24,22 @@ class MyPlugin_Admin {
     }
 
     public static function enqueue_assets($hook) {
-        // Only enqueue on our plugin page
         if ($hook !== 'toplevel_page_my-modern-plugin') {
             return;
         }
 
+        $assets_dir = plugin_dir_path(__FILE__) . '../assets';
+        $assets_url = plugin_dir_url(__FILE__) . '../assets';
+
         wp_enqueue_script('wp-element');
 
-        wp_enqueue_style(
-            'myplugin-style',
-            plugin_dir_url(__FILE__) . '../assets/plugin.css',
-            [],
-            file_exists(plugin_dir_path(__FILE__) . '../assets/plugin.css') 
-                ? filemtime(plugin_dir_path(__FILE__) . '../assets/plugin.css') 
-                : '1.0.0'
-        );
+        $css_path = $assets_dir . '/plugin.css';
+        $css_version = file_exists($css_path) ? filemtime($css_path) : '1.0.0';
+        wp_enqueue_style('myplugin-style', $assets_url . '/plugin.css', [], $css_version);
 
-        wp_enqueue_script(
-            'myplugin-script',
-            plugin_dir_url(__FILE__) . '../assets/plugin.js',
-            ['wp-element'],
-            file_exists(plugin_dir_path(__FILE__) . '../assets/plugin.js')
-                ? filemtime(plugin_dir_path(__FILE__) . '../assets/plugin.js')
-                : '1.0.0',
-            true
-        );
+        $js_path = $assets_dir . '/plugin.js';
+        $js_version = file_exists($js_path) ? filemtime($js_path) : '1.0.0';
+        wp_enqueue_script('myplugin-script', $assets_url . '/plugin.js', ['wp-element'], $js_version, true);
 
         wp_localize_script('myplugin-script', 'MyPluginData', [
             'ajax_url'  => admin_url('admin-ajax.php'),

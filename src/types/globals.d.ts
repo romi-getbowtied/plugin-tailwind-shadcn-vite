@@ -1,3 +1,23 @@
+declare const wp: {
+  element: {
+    createElement: (type: any, props?: any, ...children: any[]) => any;
+    render: (element: any, container: HTMLElement | null) => void;
+    Fragment: any;
+    Component: any;
+  };
+};
+
+declare namespace React {
+  type ReactNode = any;
+  type ReactElement = any;
+}
+
+declare namespace JSX {
+  interface IntrinsicElements {
+    [elemName: string]: any;
+  }
+}
+
 declare const MyPluginData: {
   ajax_url: string;
   nonce: string;
@@ -5,10 +25,7 @@ declare const MyPluginData: {
   admin_url: string;
 };
 
-declare const wp: {
-  element: {
-    createElement: any;
-    render: (element: any, container: HTMLElement) => void;
-  };
-};
+declare module "react" {
+  export = React;
+}
 

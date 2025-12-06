@@ -9,8 +9,6 @@
   "devDependencies": {
     "@tailwindcss/postcss": "latest",
     "@vitejs/plugin-react": "latest",
-    "react": "latest",
-    "react-dom": "latest",
     "vite": "latest"
   }
 }
