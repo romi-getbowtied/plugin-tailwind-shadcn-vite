@@ -10,6 +10,7 @@ export default defineConfig({
 	},
 	build: {
 		outDir: "assets",
+		cssCodeSplit: false,
 		rollupOptions: {
 			input: "src/plugin.tsx",
 			external: ["react", "react-dom", "react-dom/client"],
@@ -23,8 +24,6 @@ export default defineConfig({
 					"react-dom": "ReactDOM",
 					"react-dom/client": "ReactDOM",
 				},
-				// Ensure pure functions are marked for tree shaking, and module side-effects are handled
-				interop: "compat",
 			},
 		},
 	},

@@ -37,16 +37,10 @@ class Tailwind_Scoped_Plugin {
 		$css_path = TW_PLUGIN_DIR . 'assets/plugin.css';
 		$js_path = TW_PLUGIN_DIR . 'assets/plugin.js';
 		$version = file_exists($css_path) ? filemtime($css_path) : TW_PLUGIN_VERSION;
-		
-		// Enqueue React and ReactDOM from WordPress core via wp-element
-		wp_enqueue_script('wp-element');
 
-		// Enqueue styles if generated, otherwise handled by JS
-		if (file_exists($css_path)) {
-			wp_enqueue_style('tailwind-scoped-style', TW_PLUGIN_URL . 'assets/plugin.css', [], $version);
-		}
+		wp_enqueue_style('tailwind-scoped-style', TW_PLUGIN_URL . 'assets/plugin.css', [], $version);
 		
-		wp_enqueue_script('tailwind-scoped-script', TW_PLUGIN_URL . 'assets/plugin.js', ['jquery', 'wp-util', 'wp-element'], $version, true);
+		wp_enqueue_script('tailwind-scoped-script', TW_PLUGIN_URL . 'assets/plugin.js', ['wp-element'], $version, true);
 		
 		// Fix: Dequeue 'svg-painter' to prevent console errors on this custom React page.
 		// This script depends on DOM elements/globals that might be absent or conflicting.
