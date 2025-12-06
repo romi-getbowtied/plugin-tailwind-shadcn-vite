@@ -1,12 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
   plugins: [react({ jsxRuntime: "classic" })],
   resolve: {
     alias: {
       react: "wp.element",
-      "react-dom": "wp.element"
+      "react-dom": "wp.element",
+      "@": path.resolve(__dirname, "./src")
     }
   },
   build: {

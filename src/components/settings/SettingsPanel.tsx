@@ -1,11 +1,16 @@
-import { Card } from "../UI/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { React } from "../../lib/react";
 
 export default function SettingsPanel() {
   return (
     <Card>
-      <h2 className="text-xl font-semibold mb-2">Settings Panel</h2>
-      <p>Site URL: {MyPluginData?.site_url || "Loading..."}</p>
+      <CardHeader>
+        <CardTitle>Settings Panel</CardTitle>
+        <CardDescription>Manage your plugin settings</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Site URL: {MyPluginData?.site_url || "Loading..."}</p>
+      </CardContent>
     </Card>
   );
 }
