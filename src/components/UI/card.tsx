@@ -1,4 +1,4 @@
-const React = wp.element;
+import { React } from "../../lib/react";
 
 export function Card({ children }: { children?: React.ReactNode }) {
   return (

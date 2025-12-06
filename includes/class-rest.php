@@ -4,6 +4,7 @@ if (!defined('ABSPATH')) exit;
 class MyPlugin_REST {
 
     public static function init() {
+        register_setting('myplugin_group', 'myplugin_settings');
         add_action('rest_api_init', [__CLASS__, 'register_routes']);
     }
 

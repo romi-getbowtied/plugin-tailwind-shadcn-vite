@@ -1,7 +1,6 @@
 import SettingsPanel from "./components/settings/SettingsPanel";
+import { React } from "./lib/react";
 import "./index.css";
-
-const React = wp.element;
 
 function App() {
   return (

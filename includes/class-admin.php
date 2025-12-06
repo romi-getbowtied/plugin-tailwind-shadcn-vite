@@ -20,7 +20,12 @@ class MyPlugin_Admin {
     }
 
     public static function render_page() {
-        include plugin_dir_path(__FILE__) . "../admin/page.php";
+        include MYPLUGIN_PATH . "admin/page.php";
+    }
+
+    private static function get_asset_version($filename) {
+        $path = MYPLUGIN_PATH . "assets/{$filename}";
+        return file_exists($path) ? filemtime($path) : '1.0.0';
     }
 
     public static function enqueue_assets($hook) {
@@ -28,18 +33,22 @@ class MyPlugin_Admin {
             return;
         }
 
-        $assets_dir = plugin_dir_path(__FILE__) . '../assets';
-        $assets_url = plugin_dir_url(__FILE__) . '../assets';
-
         wp_enqueue_script('wp-element');
 
-        $css_path = $assets_dir . '/plugin.css';
-        $css_version = file_exists($css_path) ? filemtime($css_path) : '1.0.0';
-        wp_enqueue_style('myplugin-style', $assets_url . '/plugin.css', [], $css_version);
+        wp_enqueue_style(
+            'myplugin-style',
+            MYPLUGIN_URL . 'assets/plugin.css',
+            [],
+            self::get_asset_version('plugin.css')
+        );
 
-        $js_path = $assets_dir . '/plugin.js';
-        $js_version = file_exists($js_path) ? filemtime($js_path) : '1.0.0';
-        wp_enqueue_script('myplugin-script', $assets_url . '/plugin.js', ['wp-element'], $js_version, true);
+        wp_enqueue_script(
+            'myplugin-script',
+            MYPLUGIN_URL . 'assets/plugin.js',
+            ['wp-element'],
+            self::get_asset_version('plugin.js'),
+            true
+        );
 
         wp_localize_script('myplugin-script', 'MyPluginData', [
             'ajax_url'  => admin_url('admin-ajax.php'),

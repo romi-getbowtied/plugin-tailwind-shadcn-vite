@@ -1,6 +1,5 @@
 import { Card } from "../UI/card";
-
-const React = wp.element;
+import { React } from "../../lib/react";
 
 export default function SettingsPanel() {
   return (

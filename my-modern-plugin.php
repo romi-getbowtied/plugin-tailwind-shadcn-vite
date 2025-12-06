@@ -8,14 +8,16 @@
 
 if (!defined('ABSPATH')) exit;
 
+// Plugin constants
+define('MYPLUGIN_PATH', plugin_dir_path(__FILE__));
+define('MYPLUGIN_URL', plugin_dir_url(__FILE__));
+
 // Load includes
-require_once plugin_dir_path(__FILE__) . "includes/class-admin.php";
-require_once plugin_dir_path(__FILE__) . "includes/class-rest.php";
-require_once plugin_dir_path(__FILE__) . "includes/class-ajax.php";
-require_once plugin_dir_path(__FILE__) . "includes/class-settings.php";
+require_once MYPLUGIN_PATH . "includes/class-admin.php";
+require_once MYPLUGIN_PATH . "includes/class-rest.php";
+require_once MYPLUGIN_PATH . "includes/class-ajax.php";
 
 // Init backend systems
 MyPlugin_Admin::init();
 MyPlugin_REST::init();
 MyPlugin_AJAX::init();
-MyPlugin_Settings::init();
