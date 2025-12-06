@@ -45,7 +45,42 @@ class Tailwind_Scoped_Plugin {
 		?>
 		<div class="wrap">
 			<hr class="wp-header-end">
-			<div id="tw-plugin-app"></div>
+			
+			<!-- Scoped Container for Tailwind -->
+			<div id="tw-plugin-app">
+				<div class="p-6 space-y-6">
+					
+					<!-- Header Section (Static HTML) -->
+					<div class="flex items-center justify-between">
+						<div class="space-y-2">
+							<h1 class="text-3xl font-bold text-foreground">Tailwind Scoped Plugin</h1>
+							<p class="text-muted-foreground">Static HTML with React Islands</p>
+						</div>
+						<!-- Dynamic Theme Toggle Island -->
+						<div data-island="theme-toggle"></div>
+					</div>
+
+					<!-- Navigation Menu Island -->
+					<div data-island="navigation-menu"></div>
+
+					<!-- Content Section (Mixed) -->
+					<div class="flex flex-wrap gap-4 pt-4">
+						<div class="flex gap-2">
+							<!-- Static Buttons with Tailwind classes -->
+							<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
+								Static Button
+							</button>
+							<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2">
+								Static Secondary
+							</button>
+						</div>
+
+						<!-- Dynamic Dropdown Menu Island -->
+						<div data-island="dropdown-menu"></div>
+					</div>
+					
+				</div>
+			</div>
 		</div>
 		<?php
 	}
