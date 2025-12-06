@@ -38,7 +38,11 @@ class Tailwind_Scoped_Plugin {
 		$js_path = TW_PLUGIN_DIR . 'assets/plugin.js';
 		$version = file_exists($css_path) ? filemtime($css_path) : TW_PLUGIN_VERSION;
 		wp_enqueue_style('tailwind-scoped-style', TW_PLUGIN_URL . 'assets/plugin.css', [], $version);
-		wp_enqueue_script('tailwind-scoped-script', TW_PLUGIN_URL . 'assets/plugin.js', [], $version, true);
+		wp_enqueue_script('tailwind-scoped-script', TW_PLUGIN_URL . 'assets/plugin.js', ['jquery', 'wp-util'], $version, true);
+		
+		// Fix: Dequeue 'svg-painter' to prevent console errors on this custom React page.
+		// This script depends on DOM elements/globals that might be absent or conflicting.
+		wp_dequeue_script('svg-painter');
 	}
 	
 	public function render_admin_page() {
