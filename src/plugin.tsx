@@ -9,6 +9,16 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuGroup,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuShortcut,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import "./plugin.css";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -110,10 +120,50 @@ function App() {
 				</NavigationMenuList>
 			</NavigationMenu>
 
-			<div className="flex gap-2 pt-4">
-				<Button>Default Button</Button>
-				<Button variant="secondary">Secondary</Button>
-				<Button variant="outline">Outline</Button>
+			<div className="flex flex-wrap gap-4 pt-4">
+				<div className="flex gap-2">
+					<Button>Default Button</Button>
+					<Button variant="secondary">Secondary</Button>
+					<Button variant="outline">Outline</Button>
+				</div>
+
+				<DropdownMenu>
+					<DropdownMenuTrigger asChild>
+						<Button variant="outline">Dropdown Menu</Button>
+					</DropdownMenuTrigger>
+					<DropdownMenuContent className="w-56" align="start">
+						<DropdownMenuLabel>My Account</DropdownMenuLabel>
+						<DropdownMenuSeparator />
+						<DropdownMenuGroup>
+							<DropdownMenuItem>
+								Profile
+								<DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+							</DropdownMenuItem>
+							<DropdownMenuItem>
+								Billing
+								<DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+							</DropdownMenuItem>
+							<DropdownMenuItem>
+								Settings
+								<DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+							</DropdownMenuItem>
+							<DropdownMenuItem>
+								Keyboard shortcuts
+								<DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+							</DropdownMenuItem>
+						</DropdownMenuGroup>
+						<DropdownMenuSeparator />
+						<DropdownMenuItem>Team</DropdownMenuItem>
+						<DropdownMenuItem>GitHub</DropdownMenuItem>
+						<DropdownMenuItem>Support</DropdownMenuItem>
+						<DropdownMenuItem disabled>API</DropdownMenuItem>
+						<DropdownMenuSeparator />
+						<DropdownMenuItem>
+							Log out
+							<DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+						</DropdownMenuItem>
+					</DropdownMenuContent>
+				</DropdownMenu>
 			</div>
 		</div>
 	);
