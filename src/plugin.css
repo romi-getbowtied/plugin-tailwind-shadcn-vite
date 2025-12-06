@@ -1,5 +1,5 @@
 @config "../tailwind.config.js";
-.tw-plugin-scope {
+#tw-plugin-app {
 	@import "tailwindcss/preflight.css" layer(base);
 }
 @import "tailwindcss/theme.css";
@@ -26,11 +26,11 @@
 		--popover-foreground: 222.2 84% 4.9%;
 		--radius: 0.5rem;
 	}
-	.tw-plugin-scope {
+	#tw-plugin-app {
 		background-color: hsl(var(--background));
 		color: hsl(var(--foreground));
 	}
-	.tw-plugin-scope * {
+	#tw-plugin-app * {
 		border-color: hsl(var(--border));
 	}
 }

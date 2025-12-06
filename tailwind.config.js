@@ -2,7 +2,6 @@ import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	content: ["./**/*.php", "./src/**/*.{ts,tsx,js,jsx}"],
-	important: ".tw-plugin-scope",
 	plugins: [tailwindcssAnimate],
 	theme: {
 		extend: {

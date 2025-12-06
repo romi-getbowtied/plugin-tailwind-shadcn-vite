@@ -45,9 +45,7 @@ class Tailwind_Scoped_Plugin {
 		?>
 		<div class="wrap">
 			<hr class="wp-header-end">
-			<div class="tw-plugin-scope">
-				<div id="tw-plugin-app"></div>
-			</div>
+			<div id="tw-plugin-app"></div>
 		</div>
 		<?php
 	}
