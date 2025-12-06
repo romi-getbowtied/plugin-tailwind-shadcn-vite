@@ -1,4 +1,15 @@
-@import "tailwindcss";
+@config "../tailwind.config.js";
+
+#my-plugin-app {
+  @import "tailwindcss/preflight.css" layer(base);
+  
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";
 
 @layer base {
   :root {
