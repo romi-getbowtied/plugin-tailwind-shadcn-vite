@@ -34,10 +34,11 @@ class Tailwind_Scoped_Plugin {
 	
 	public function enqueue_assets($hook) {
 		if ($hook !== 'toplevel_page_tailwind-scoped-page') return;
-		$css = TW_PLUGIN_DIR . 'assets/plugin.css';
-		$js = TW_PLUGIN_DIR . 'assets/plugin.js';
-		wp_enqueue_style('tailwind-scoped-style', TW_PLUGIN_URL . 'assets/plugin.css', [], file_exists($css) ? filemtime($css) : TW_PLUGIN_VERSION);
-		wp_enqueue_script('tailwind-scoped-script', TW_PLUGIN_URL . 'assets/plugin.js', [], file_exists($js) ? filemtime($js) : TW_PLUGIN_VERSION, true);
+		$css_path = TW_PLUGIN_DIR . 'assets/plugin.css';
+		$js_path = TW_PLUGIN_DIR . 'assets/plugin.js';
+		$version = file_exists($css_path) ? filemtime($css_path) : TW_PLUGIN_VERSION;
+		wp_enqueue_style('tailwind-scoped-style', TW_PLUGIN_URL . 'assets/plugin.css', [], $version);
+		wp_enqueue_script('tailwind-scoped-script', TW_PLUGIN_URL . 'assets/plugin.js', [], $version, true);
 	}
 	
 	public function render_admin_page() {

@@ -4,18 +4,18 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  resolve: {
-    alias: { "@": path.resolve(__dirname, "./src") },
-  },
-  build: {
-    outDir: "assets",
-    rollupOptions: {
-      input: "src/plugin.tsx",
-      output: {
-        entryFileNames: "plugin.js",
-        assetFileNames: "plugin.css",
-      },
-    },
-  },
+	plugins: [react(), tailwindcss()],
+	resolve: {
+		alias: { "@": path.resolve(__dirname, "./src") },
+	},
+	build: {
+		outDir: "assets",
+		rollupOptions: {
+			input: "src/plugin.tsx",
+			output: {
+				entryFileNames: "plugin.js",
+				assetFileNames: "plugin.css",
+			},
+		},
+	},
 });
