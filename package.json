@@ -1,24 +1,18 @@
 {
-  "name": "my-modern-plugin",
+  "name": "tailwind-scoped-plugin",
   "version": "1.0.0",
+  "description": "WordPress plugin with Tailwind 4 scoped styling",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
-  },
-  "dependencies": {
-    "@radix-ui/react-navigation-menu": "^1.2.14",
-    "class-variance-authority": "^0.7.1",
-    "lucide-react": "^0.556.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "dev": "npx @tailwindcss/cli -i ./css/tailwind.css -o ./css/style.css --watch",
+    "build": "npx @tailwindcss/cli -i ./css/tailwind.css -o ./css/style.css --minify"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.17",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "@vitejs/plugin-react": "latest",
-    "shadcn": "^3.5.1",
-    "vite": "latest"
+    "@tailwindcss/cli": "^4.1.14",
+    "postcss": "^8.5.6"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.14"
   }
 }
+
