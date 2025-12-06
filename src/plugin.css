@@ -56,8 +56,3 @@
 	}
 }
 
-/* Dropdown menu border theme support - works for portaled elements outside #tw-plugin-app */
-/* Force border color to use theme variable for all elements with border class */
-.border {
-	border-color: hsl(var(--border)) !important;
-}

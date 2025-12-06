@@ -1,4 +1,5 @@
 import { createRoot } from "react-dom/client";
+import "@/lib/portal-patch"; // Apply global portal patch
 import { Button } from "@/components/ui/button";
 import {
 	NavigationMenu,
