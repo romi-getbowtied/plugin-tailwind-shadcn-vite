@@ -8,9 +8,7 @@
  * License: GPL v2 or later
  */
 
-if (!defined('ABSPATH')) {
-	exit; // Exit if accessed directly
-}
+if (!defined('ABSPATH')) exit;
 
 define('TW_PLUGIN_VERSION', '1.0.0');
 define('TW_PLUGIN_DIR', plugin_dir_path(__FILE__));
@@ -96,6 +94,4 @@ class Tailwind_Scoped_Plugin {
 		<?php
 	}
 }
-
 new Tailwind_Scoped_Plugin();
-
