@@ -12,9 +12,19 @@ export default defineConfig({
 		outDir: "assets",
 		rollupOptions: {
 			input: "src/plugin.tsx",
+			external: ["react", "react-dom", "react-dom/client"],
 			output: {
+				format: "iife",
+				name: "TailwindScopedPlugin",
 				entryFileNames: "plugin.js",
 				assetFileNames: "plugin.css",
+				globals: {
+					react: "React",
+					"react-dom": "ReactDOM",
+					"react-dom/client": "ReactDOM",
+				},
+				// Ensure pure functions are marked for tree shaking, and module side-effects are handled
+				interop: "compat",
 			},
 		},
 	},
