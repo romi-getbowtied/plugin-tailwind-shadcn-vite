@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [react({ jsxRuntime: "classic" })],
   resolve: {
     alias: {
-      "src": path.resolve(__dirname, "./src"),
       "@": path.resolve(__dirname, "./src")
     }
   },
