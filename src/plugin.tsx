@@ -19,6 +19,7 @@ import {
 	DropdownMenuShortcut,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import "./plugin.css";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -58,9 +59,12 @@ function ListItem({ title, children, href, ...props }: React.ComponentPropsWitho
 function App() {
 	return (
 		<div className="p-6 space-y-6">
-			<div className="space-y-2">
-				<h1 className="text-3xl font-bold">Tailwind Scoped Plugin</h1>
-				<p className="text-muted-foreground">shadcn/ui navigation menu example</p>
+			<div className="flex items-center justify-between">
+				<div className="space-y-2">
+					<h1 className="text-3xl font-bold text-foreground">Tailwind Scoped Plugin</h1>
+					<p className="text-muted-foreground">shadcn/ui navigation menu example</p>
+				</div>
+				<ThemeToggle />
 			</div>
 
 			<NavigationMenu>
