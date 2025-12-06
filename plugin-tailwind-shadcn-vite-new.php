@@ -17,7 +17,6 @@ define('TW_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('TW_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 class Tailwind_Scoped_Plugin {
-	
 	public function __construct() {
 		add_action('admin_menu', [$this, 'add_admin_page']);
 		add_action('admin_enqueue_scripts', [$this, 'enqueue_styles']);
@@ -37,13 +36,8 @@ class Tailwind_Scoped_Plugin {
 	
 	public function enqueue_styles($hook) {
 		if ($hook !== 'toplevel_page_tailwind-scoped-page') return;
-		$css_path = TW_PLUGIN_DIR . 'assets/plugin.css';
-		wp_enqueue_style(
-			'tailwind-scoped-style',
-			TW_PLUGIN_URL . 'assets/plugin.css',
-			[],
-			file_exists($css_path) ? filemtime($css_path) : TW_PLUGIN_VERSION
-		);
+		$css = TW_PLUGIN_DIR . 'assets/plugin.css';
+		wp_enqueue_style('tailwind-scoped-style', TW_PLUGIN_URL . 'assets/plugin.css', [], file_exists($css) ? filemtime($css) : TW_PLUGIN_VERSION);
 	}
 	
 	public function render_admin_page() {

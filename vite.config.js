@@ -5,7 +5,6 @@ export default defineConfig({
   plugins: [tailwindcss()],
   build: {
     outDir: "assets",
-    emptyOutDir: false,
     rollupOptions: {
       input: "src/plugin.js",
       output: {
@@ -13,6 +12,5 @@ export default defineConfig({
         assetFileNames: "plugin.css",
       },
     },
-    minify: "esbuild",
   },
 });
