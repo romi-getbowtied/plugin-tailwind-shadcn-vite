@@ -9,9 +9,6 @@ build/
 *.min.js
 *.min.css
 
-# Generated CSS (if using Tailwind CLI)
-css/style.css
-
 # IDE and Editor files
 .vscode/
 .idea/

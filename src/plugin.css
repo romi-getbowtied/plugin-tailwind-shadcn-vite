@@ -1,0 +1,7 @@
+@config "../tailwind.config.js";
+.tw-plugin-scope {
+	@import "tailwindcss/preflight.css" layer(base);
+}
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";
+

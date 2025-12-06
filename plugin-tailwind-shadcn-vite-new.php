@@ -19,8 +19,8 @@ define('TW_PLUGIN_URL', plugin_dir_url(__FILE__));
 class Tailwind_Scoped_Plugin {
 	
 	public function __construct() {
-		add_action('admin_menu', array($this, 'add_admin_page'));
-		add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
+		add_action('admin_menu', [$this, 'add_admin_page']);
+		add_action('admin_enqueue_scripts', [$this, 'enqueue_styles']);
 	}
 	
 	public function add_admin_page() {
@@ -29,33 +29,27 @@ class Tailwind_Scoped_Plugin {
 			'Tailwind Page',
 			'manage_options',
 			'tailwind-scoped-page',
-			array($this, 'render_admin_page'),
+			[$this, 'render_admin_page'],
 			'dashicons-admin-appearance',
 			30
 		);
 	}
 	
 	public function enqueue_styles($hook) {
-		if ($hook !== 'toplevel_page_tailwind-scoped-page') {
-			return;
-		}
-		
+		if ($hook !== 'toplevel_page_tailwind-scoped-page') return;
+		$css_path = TW_PLUGIN_DIR . 'assets/plugin.css';
 		wp_enqueue_style(
 			'tailwind-scoped-style',
-			TW_PLUGIN_URL . 'css/style.css',
-			array(),
-			TW_PLUGIN_VERSION
+			TW_PLUGIN_URL . 'assets/plugin.css',
+			[],
+			file_exists($css_path) ? filemtime($css_path) : TW_PLUGIN_VERSION
 		);
 	}
 	
 	public function render_admin_page() {
 		?>
-		<!-- WordPress Wrapper -->
 		<div class="wrap">
-			<h1></h1>
 			<hr class="wp-header-end">
-			
-			<!-- Tailwind Scoped Content -->
 			<div class="tw-plugin-scope">
 				<div class="overflow-hidden py-24 sm:py-32">
 					<div class="mx-auto max-w-7xl px-6 lg:px-8">
