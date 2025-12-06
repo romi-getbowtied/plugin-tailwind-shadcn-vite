@@ -1,32 +1,32 @@
 {
-  "name": "tailwind-scoped-plugin",
-  "version": "1.0.0",
-  "description": "WordPress plugin with Tailwind 4 scoped styling",
-  "type": "module",
-  "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build"
-  },
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.1.17",
-    "@types/node": "^24.10.1",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
-    "shadcn": "^3.5.1",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.9.3",
-    "vite": "^7.2.6"
-  },
-  "dependencies": {
-    "@radix-ui/react-navigation-menu": "^1.2.14",
-    "@radix-ui/react-slot": "^1.2.4",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.556.0",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
-    "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.14"
-  }
+	"name": "tailwind-scoped-plugin",
+	"version": "1.0.0",
+	"description": "WordPress plugin with Tailwind 4 scoped styling",
+	"type": "module",
+	"scripts": {
+		"dev": "vite build --watch",
+		"build": "vite build"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.1.17",
+		"@types/node": "^24.10.1",
+		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^5.1.1",
+		"shadcn": "^3.5.1",
+		"tailwindcss-animate": "^1.0.7",
+		"typescript": "^5.9.3",
+		"vite": "^7.2.6"
+	},
+	"dependencies": {
+		"@radix-ui/react-navigation-menu": "^1.2.14",
+		"@radix-ui/react-slot": "^1.2.4",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"lucide-react": "^0.556.0",
+		"react": "^19.2.1",
+		"react-dom": "^19.2.1",
+		"tailwind-merge": "^3.4.0",
+		"tailwindcss": "^4.1.14"
+	}
 }
