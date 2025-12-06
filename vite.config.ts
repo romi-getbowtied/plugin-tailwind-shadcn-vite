@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     outDir: "assets",
     rollupOptions: {
-      input: "src/plugin.js",
+      input: "src/plugin.ts",
       output: {
         entryFileNames: "plugin.js",
         assetFileNames: "plugin.css",
@@ -14,3 +14,4 @@ export default defineConfig({
     },
   },
 });
+
