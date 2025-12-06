@@ -1,19 +1,22 @@
 import ReactDOM from "react-dom";
 import { ReactNode } from "react";
 
+/**
+ * Global Portal Patch
+ * 
+ * Intercepts React's createPortal to force portals (like Radix UI primitives)
+ * to render inside our scoped container (#tw-plugin-app) instead of document.body.
+ * 
+ * This ensures all portaled content inherits our scoped Tailwind styles (important: "#tw-plugin-app").
+ */
+
 const originalCreatePortal = ReactDOM.createPortal;
 
-// Redirect portals targeting document.body to our scoped container
-ReactDOM.createPortal = (
-  children: ReactNode,
-  container: Element | DocumentFragment,
-  key?: string | null
-) => {
-  const pluginRoot = document.getElementById("tw-plugin-app");
+ReactDOM.createPortal = (children: ReactNode, container: Element | DocumentFragment, key?: string | null) => {
+  // Find our app's root container
+  const root = document.getElementById("tw-plugin-app");
   
-  if (container === document.body && pluginRoot) {
-    return originalCreatePortal(children, pluginRoot, key);
-  }
-  
-  return originalCreatePortal(children, container, key);
+  // If the portal is targeting body (default for Radix) and our root exists, redirect to our root
+  // Otherwise, behave normally
+  return originalCreatePortal(children, (container === document.body && root) ? root : container, key);
 };
