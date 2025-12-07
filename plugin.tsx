@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import "@/lib/portal-patch"; // Apply global portal patch
-import { Button } from "@repo/shadcn-ui/components/ui/button";
+import { Button } from "@/shadcn-ui/components/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -11,11 +11,11 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuShortcut,
 	DropdownMenuTrigger,
-} from "@repo/shadcn-ui/components/ui/dropdown-menu";
+} from "@/shadcn-ui/components/ui/dropdown-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Toaster } from "@repo/shadcn-ui/components/ui/sonner";
+import { Toaster } from "@/shadcn-ui/components/ui/sonner";
 import { toast } from "sonner";
-import { Switch } from "@repo/shadcn-ui/components/ui/switch";
+import { Switch } from "@/shadcn-ui/components/ui/switch";
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -24,7 +24,7 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
-} from "@repo/shadcn-ui/components/ui/navigation-menu";
+} from "@/shadcn-ui/components/ui/navigation-menu";
 import { Circle, CircleCheck, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import "./plugin.css";

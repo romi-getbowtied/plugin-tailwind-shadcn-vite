@@ -1,5 +1,6 @@
 "use client"
 
+import * as React from "react"
 import {
   CircleCheck,
   Info,
@@ -7,13 +8,34 @@ import {
   OctagonX,
   TriangleAlert,
 } from "lucide-react"
-import { useTheme } from "next-themes"
 import { Toaster as Sonner } from "sonner"
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme()
+  const [theme, setTheme] = React.useState<"light" | "dark">(() => {
+    if (typeof window !== "undefined") {
+      const root = document.documentElement;
+      if (root.classList.contains("dark")) return "dark";
+      return "light";
+    }
+    return "light";
+  });
+
+  React.useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const root = document.documentElement;
+      const isDark = root.classList.contains("dark");
+      setTheme(isDark ? "dark" : "light");
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <Sonner
