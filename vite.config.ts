@@ -11,7 +11,6 @@ export default defineConfig({
 		},
 	},
 	build: {
-		manifest: true,
 		outDir: "assets",
 		cssCodeSplit: false,
 		cssMinify: false,
