@@ -14,6 +14,7 @@ export default defineConfig({
 	build: {
 		outDir: "assets",
 		cssCodeSplit: false,
+		cssMinify: false,
 		rollupOptions: {
 			input: "src/plugin.tsx",
 			external: ["react", "react-dom", "react-dom/client"],
