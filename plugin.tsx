@@ -27,7 +27,7 @@ import {
 } from "@repo/shadcn-ui/components/ui/navigation-menu";
 import { Circle, CircleCheck, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
-import "./styles/plugin.css";
+import "./plugin.css";
 
 // --- Components for Islands ---
 

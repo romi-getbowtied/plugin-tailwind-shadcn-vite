@@ -5,15 +5,15 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.js",
-    "css": "src/plugin.css",
+    "css": "src/styles/plugin.css",
     "baseColor": "slate",
     "cssVariables": true,
     "prefix": ""
   },
   "aliases": {
-    "components": "@/components",
+    "components": "@repo/shadcn-ui/components",
     "utils": "@/lib/utils",
-    "ui": "@/components/ui",
+    "ui": "@repo/shadcn-ui/components/ui",
     "lib": "@/lib",
     "hooks": "@/hooks"
   }
