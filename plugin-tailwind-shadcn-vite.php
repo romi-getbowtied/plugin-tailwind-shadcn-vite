@@ -62,14 +62,16 @@ class Tailwind_Scoped_Plugin {
 							<h1 class="text-3xl font-bold text-foreground">Tailwind Scoped Plugin</h1>
 							<p class="text-muted-foreground">Static HTML with React Islands</p>
 						</div>
-						<!-- Dynamic Theme Toggle Island -->
-						<div data-island="theme-toggle"></div>
+					<!-- Dynamic Theme Toggle Island -->
+					<div data-island="theme-toggle"></div>
+				</div>
+
+				<!-- Navigation Menu -->
+					<div class="flex flex-wrap pt-4 pb-4 border-b">
+						<div data-island="navigation-menu"></div>
 					</div>
 
-					<!-- Navigation Menu Island -->
-					<div data-island="navigation-menu"></div>
-
-					<!-- Content Section (Mixed) -->
+				<!-- Content Section (Mixed) -->
 					<div class="flex flex-wrap gap-4 pt-4">
 						<div class="flex gap-2">
 							<!-- Static Buttons with Tailwind classes -->
