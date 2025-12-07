@@ -11,12 +11,21 @@ export default defineConfig({
 		},
 	},
 	build: {
+		manifest: true,
 		outDir: "assets",
 		cssCodeSplit: false,
 		cssMinify: false,
 		rollupOptions: {
 			input: "src/plugin.tsx",
-			external: ["react", "react-dom", "react-dom/client"],
+			external: [
+				"react",
+				"react-dom",
+				"react-dom/client",
+				"@wordpress/element",
+				"@wordpress/components",
+				"@wordpress/block-editor",
+				// etc...
+			],
 			output: {
 				format: "iife",
 				name: "TailwindScopedPlugin",
@@ -26,6 +35,9 @@ export default defineConfig({
 					react: "React",
 					"react-dom": "ReactDOM",
 					"react-dom/client": "ReactDOM",
+					"@wordpress/element": "wp.element",
+					"@wordpress/components": "wp.components",
+					"@wordpress/block-editor": "wp.blockEditor",
 				},
 			},
 		},
