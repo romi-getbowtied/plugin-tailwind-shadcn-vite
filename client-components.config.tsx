@@ -13,7 +13,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { DropdownMenuIsland } from "@/components/app/client-side/dropdown-menu-island/component";
 import { SonnerButtonIsland } from "@/components/app/client-side/sonner-button-island/component";
 import { SwitchIsland } from "@/components/app/client-side/switch-island/component";
-// import { AnimatedTestimonialsDemo } from "@/components/app/client-side/animated-testimonials-demo/component";
+import { AnimatedTestimonialsDemo } from "@/components/app/client-side/animated-testimonials-demo/component";
 // import { FloatingDockDemo } from "@/components/app/client-side/floating-dock-demo/component";
 // import { ThreeDCardDemo } from "@/components/app/client-side/three-d-card-demo/component";
 
@@ -28,7 +28,7 @@ export const clientComponents = {
 	"dropdown-menu": DropdownMenuIsland,
 	"sonner-button": SonnerButtonIsland,
 	"switch": SwitchIsland,
-	// "animated-testimonials": AnimatedTestimonialsDemo,
+	"animated-testimonials": AnimatedTestimonialsDemo,
 	// "floating-dock": FloatingDockDemo,
 	// "three-d-card": ThreeDCardDemo,
 	"toaster": () => <Toaster position="top-center" />,
