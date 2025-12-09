@@ -1,5 +1,5 @@
 /**
- * Islands Configuration
+ * Component Registry
  * 
  * Activate/deactivate React island components by modifying this file.
  * Components listed here will be included in the bundle when you run `npm run build`.

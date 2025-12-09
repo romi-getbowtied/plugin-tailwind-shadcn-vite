@@ -11,13 +11,7 @@
 if (!defined('ABSPATH')) exit;
 
 include_once dirname(__FILE__) . '/ui/index.php';
-
-tw_register_components([
-	'navigation-menu-enhanced',
-	'hero-parallax-enhanced',
-	// 'bento-grid-enhanced',
-	// 'apple-cards-carousel-enhanced',
-]);
+include_once dirname(__FILE__) . '/components.registry.php';
 
 class Tailwind_Scoped_Plugin {
 	public function __construct() {

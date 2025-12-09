@@ -16,6 +16,6 @@
 			"@config/*": ["./*"]
 		}
 	},
-	"include": ["ui/src/**/*", "vite.config.ts", "islands.config.tsx"],
+	"include": ["ui/src/**/*", "vite.config.ts", "components.registry.tsx"],
 	"exclude": ["node_modules", "assets"]
 }
