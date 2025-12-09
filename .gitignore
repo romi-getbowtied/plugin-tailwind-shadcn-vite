@@ -4,6 +4,7 @@ package-lock.json
 
 # Build outputs
 assets/
+ui/assets/
 dist/
 build/
 *.min.js
