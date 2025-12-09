@@ -20,7 +20,7 @@ add_filter('tw_component_loader_active_components', function($components) {
 	return $components;
 });
 
-include_once dirname(__FILE__) . '/components/index.php';
+include_once dirname(__FILE__) . '/ui/index.php';
 
 class Tailwind_Scoped_Plugin {
 	public function __construct() {
@@ -47,8 +47,8 @@ class Tailwind_Scoped_Plugin {
 		// Use global if available, otherwise calculate directly from plugin file
 		if (!isset($tw_components_paths)) {
 			$tw_components_paths = [
-				'path' => plugin_dir_path(__FILE__) . 'components',
-				'url'  => plugin_dir_url(__FILE__) . 'components'
+				'path' => plugin_dir_path(__FILE__) . 'ui',
+				'url'  => plugin_dir_url(__FILE__) . 'ui'
 			];
 		}
 		

@@ -1,0 +1,3 @@
+[submodule "ui"]
+	path = ui
+	url = https://github.com/romi-getbowtied/react-ui-themes-plugins.git

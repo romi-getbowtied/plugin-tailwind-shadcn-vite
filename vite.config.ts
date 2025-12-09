@@ -7,16 +7,16 @@ export default defineConfig({
 	plugins: [react(), tailwindcss()],
 	resolve: {
 		alias: [
-			{ find: "@", replacement: path.resolve(__dirname, "./components/src") },
+			{ find: "@", replacement: path.resolve(__dirname, "./ui/src") },
 			{ find: "@config", replacement: path.resolve(__dirname, "./") },
 		],
 	},
 	build: {
-		outDir: "components/assets",
+		outDir: "ui/assets",
 		cssCodeSplit: false,
 		cssMinify: false,
 		rollupOptions: {
-			input: "components/src/components.tsx",
+			input: "ui/src/components.tsx",
 			external: [
 				"react",
 				"react-dom",
