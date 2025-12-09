@@ -24,14 +24,14 @@ import { ThreeDCardDemo } from "@/components/app/client-side/three-d-card-demo/c
  * Only components listed here will be included in the build.
  */
 export const clientComponents = {
-	//"theme-toggle": ThemeToggle,
-	//"dropdown-menu": DropdownMenuIsland,
-	//"sonner-button": SonnerButtonIsland,
-	//"switch": SwitchIsland,
-	//"animated-testimonials": AnimatedTestimonialsDemo,
-	//"floating-dock": FloatingDockDemo,
-	//"three-d-card": ThreeDCardDemo,
-	//"toaster": () => <Toaster position="top-center" />,
+	"theme-toggle": ThemeToggle,
+	"dropdown-menu": DropdownMenuIsland,
+	"sonner-button": SonnerButtonIsland,
+	"switch": SwitchIsland,
+	"animated-testimonials": AnimatedTestimonialsDemo,
+	"floating-dock": FloatingDockDemo,
+	"three-d-card": ThreeDCardDemo,
+	"toaster": () => <Toaster position="top-center" />,
 } as const;
 
 /**
@@ -49,10 +49,10 @@ import { enhanceBentoGrid } from "@/components/app/server-side/bento-grid-enhanc
 import { enhanceAppleCardsCarousel } from "@/components/app/server-side/apple-cards-carousel-enhanced/scripts";
 
 export const serverComponents = {
-	//"navigation-menu-enhanced": enhanceNavigationMenu,
-	//"hero-parallax-enhanced": enhanceHeroParallax,
-	//"bento-grid-enhanced": enhanceBentoGrid,
-	//"apple-cards-carousel-enhanced": enhanceAppleCardsCarousel,
+	"navigation-menu-enhanced": enhanceNavigationMenu,
+	"hero-parallax-enhanced": enhanceHeroParallax,
+	"bento-grid-enhanced": enhanceBentoGrid,
+	"apple-cards-carousel-enhanced": enhanceAppleCardsCarousel,
 } as const;
 
 /**
