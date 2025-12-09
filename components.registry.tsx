@@ -1,13 +1,8 @@
-/**
- * Component Registry
- * 
- * Activate/deactivate React island components by modifying this file.
- * Components listed here will be included in the bundle when you run `npm run build`.
- * 
- * To deactivate a component, comment it out or remove it from the array.
- */
+// ============================================================================
+// IMPORTS
+// ============================================================================
 
-import * as React from "react";
+// Client-side components
 import { ThemeToggle } from "@/components/app/client-side/theme-toggle/component";
 import { Toaster } from "@/components/ui/sonner";
 import { DropdownMenuIsland } from "@/components/app/client-side/dropdown-menu-island/component";
@@ -17,12 +12,17 @@ import { AnimatedTestimonialsDemo } from "@/components/app/client-side/animated-
 import { FloatingDockDemo } from "@/components/app/client-side/floating-dock-demo/component";
 import { ThreeDCardDemo } from "@/components/app/client-side/three-d-card-demo/component";
 
-/**
- * React islands registry
- * 
- * Add or remove components from this object to control what gets bundled.
- * Only components listed here will be included in the build.
- */
+// Server-side components
+import { enhanceNavigationMenu } from "@/components/app/server-side/navigation-menu-enhanced/scripts";
+import { enhanceHeroParallax } from "@/components/app/server-side/hero-parallax-enhanced/scripts";
+import { enhanceBentoGrid } from "@/components/app/server-side/bento-grid-enhanced/scripts";
+import { enhanceAppleCardsCarousel } from "@/components/app/server-side/apple-cards-carousel-enhanced/scripts";
+
+// ============================================================================
+// EXPORTS
+// ============================================================================
+
+// Client-side components
 export const clientComponents = {
 	"theme-toggle": ThemeToggle,
 	"dropdown-menu": DropdownMenuIsland,
@@ -34,20 +34,7 @@ export const clientComponents = {
 	"toaster": () => <Toaster position="top-center" />,
 } as const;
 
-/**
- * Type for component slugs
- */
-export type ClientComponentSlug = keyof typeof clientComponents;
-
-/**
- * Server-side components configuration
- * Import server-side enhancement scripts
- */
-import { enhanceNavigationMenu } from "@/components/app/server-side/navigation-menu-enhanced/scripts";
-import { enhanceHeroParallax } from "@/components/app/server-side/hero-parallax-enhanced/scripts";
-import { enhanceBentoGrid } from "@/components/app/server-side/bento-grid-enhanced/scripts";
-import { enhanceAppleCardsCarousel } from "@/components/app/server-side/apple-cards-carousel-enhanced/scripts";
-
+// Server-side components
 export const serverComponents = {
 	"navigation-menu-enhanced": enhanceNavigationMenu,
 	"hero-parallax-enhanced": enhanceHeroParallax,
@@ -55,8 +42,7 @@ export const serverComponents = {
 	"apple-cards-carousel-enhanced": enhanceAppleCardsCarousel,
 } as const;
 
-/**
- * Type for server component slugs
- */
+// Types
+export type ClientComponentSlug = keyof typeof clientComponents;
 export type ServerComponentSlug = keyof typeof serverComponents;
 
