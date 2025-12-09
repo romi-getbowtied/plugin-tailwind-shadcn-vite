@@ -46,10 +46,10 @@ class Tailwind_Scoped_Plugin {
 					<div data-island="theme-toggle"></div>
 				</div>
 					<div class="flex flex-wrap pt-4 pb-4 border-b">
-						<?php tw_render_nav_menu('primary'); ?>
+						<?php if (function_exists('tw_render_nav_menu')) tw_render_nav_menu('primary'); ?>
 					</div>
 				</div>
-				<?php tw_render_hero_parallax(); ?>
+				<?php if (function_exists('tw_render_hero_parallax')) tw_render_hero_parallax(); ?>
 				<div class="p-6 space-y-6">
 					<div class="flex flex-wrap gap-4 pt-4">
 						<div class="flex gap-2">
