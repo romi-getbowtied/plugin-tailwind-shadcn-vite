@@ -78,8 +78,8 @@ class Tailwind_Scoped_Plugin {
 							<h1 class="text-3xl font-bold text-foreground">Tailwind Scoped Plugin</h1>
 							<p class="text-muted-foreground">Static HTML with React Islands</p>
 						</div>
-						<div data-island="theme-toggle"></div>
-					</div>
+					<div data-island="theme-toggle"></div>
+				</div>
 					<div class="flex flex-wrap pt-4 pb-4 border-b">
 						<?php if (function_exists('tw_render_nav_menu')) : ?>
 							<?php tw_render_nav_menu('primary'); ?>
