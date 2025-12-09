@@ -10,43 +10,29 @@
 
 if (!defined('ABSPATH')) exit;
 
-add_filter('tw_component_loader_active_components', function($components) {
-	$components['server-side'] = [
-		'navigation-menu-enhanced',
-		'hero-parallax-enhanced',
-		// 'bento-grid-enhanced',
-		// 'apple-cards-carousel-enhanced',
-	];
-	return $components;
-});
-
 include_once dirname(__FILE__) . '/ui/index.php';
+
+tw_register_components([
+	'navigation-menu-enhanced',
+	'hero-parallax-enhanced',
+	// 'bento-grid-enhanced',
+	// 'apple-cards-carousel-enhanced',
+]);
 
 class Tailwind_Scoped_Plugin {
 	public function __construct() {
-		add_action('admin_menu', [$this, 'add_admin_page']);
-		add_action('admin_enqueue_scripts', [$this, 'enqueue_assets']);
-	}
-	
-	public function add_admin_page() {
-		add_menu_page(
+		add_action('admin_menu', fn() => add_menu_page(
 			'Tailwind Page',
 			'Tailwind Page',
 			'manage_options',
 			'tailwind-scoped-page',
-			[$this, 'render_admin_page'],
+			[$this, 'render'],
 			'dashicons-admin-appearance',
 			30
-		);
+		));
 	}
 	
-	public function enqueue_assets($hook) {
-		if ($hook !== 'toplevel_page_tailwind-scoped-page') return;
-		tw_enqueue_assets($hook);
-		wp_dequeue_script('svg-painter');
-	}
-	
-	public function render_admin_page() {
+	public function render() {
 		?>
 		<div class="wrap">
 			<hr class="wp-header-end">
@@ -60,14 +46,10 @@ class Tailwind_Scoped_Plugin {
 					<div data-island="theme-toggle"></div>
 				</div>
 					<div class="flex flex-wrap pt-4 pb-4 border-b">
-						<?php if (function_exists('tw_render_nav_menu')) : ?>
-							<?php tw_render_nav_menu('primary'); ?>
-						<?php endif; ?>
+						<?php tw_render_nav_menu('primary'); ?>
 					</div>
 				</div>
-				<?php if (function_exists('tw_render_hero_parallax')) : ?>
-					<?php tw_render_hero_parallax(); ?>
-				<?php endif; ?>
+				<?php tw_render_hero_parallax(); ?>
 				<div class="p-6 space-y-6">
 					<div class="flex flex-wrap gap-4 pt-4">
 						<div class="flex gap-2">
