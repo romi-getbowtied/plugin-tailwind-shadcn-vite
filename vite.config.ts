@@ -6,16 +6,17 @@ import path from "path";
 export default defineConfig({
 	plugins: [react(), tailwindcss()],
 	resolve: {
-		alias: {
-			"@": path.resolve(__dirname, "./src"),
-		},
+		alias: [
+			{ find: "@", replacement: path.resolve(__dirname, "./components/src") },
+			{ find: "@config", replacement: path.resolve(__dirname, "./") },
+		],
 	},
 	build: {
-		outDir: "assets",
+		outDir: "components/assets",
 		cssCodeSplit: false,
 		cssMinify: false,
 		rollupOptions: {
-			input: "src/plugin.tsx",
+			input: "components/src/components.tsx",
 			external: [
 				"react",
 				"react-dom",
@@ -28,8 +29,8 @@ export default defineConfig({
 			output: {
 				format: "iife",
 				name: "TailwindScopedPlugin",
-				entryFileNames: "plugin.js",
-				assetFileNames: "plugin.css",
+				entryFileNames: "scripts.js",
+				assetFileNames: "styles.css",
 				globals: {
 					react: "React",
 					"react-dom": "ReactDOM",

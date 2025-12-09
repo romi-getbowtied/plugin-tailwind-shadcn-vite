@@ -10,9 +10,17 @@
 
 if (!defined('ABSPATH')) exit;
 
-define('TW_PLUGIN_VERSION', '1.0.0');
-define('TW_PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('TW_PLUGIN_URL', plugin_dir_url(__FILE__));
+add_filter('tw_component_loader_active_components', function($components) {
+	$components['server-side'] = [
+		'navigation-menu-enhanced',
+		// 'hero-parallax-enhanced',
+		// 'bento-grid-enhanced',
+		// 'apple-cards-carousel-enhanced',
+	];
+	return $components;
+});
+
+include_once dirname(__FILE__) . '/components/index.php';
 
 class Tailwind_Scoped_Plugin {
 	public function __construct() {
@@ -34,16 +42,28 @@ class Tailwind_Scoped_Plugin {
 	
 	public function enqueue_assets($hook) {
 		if ($hook !== 'toplevel_page_tailwind-scoped-page') return;
-		$css_path = TW_PLUGIN_DIR . 'assets/plugin.css';
-		$js_path = TW_PLUGIN_DIR . 'assets/plugin.js';
-		$version = file_exists($css_path) ? filemtime($css_path) : TW_PLUGIN_VERSION;
+		global $tw_components_paths, $tw_component_loader;
+		
+		// Use global if available, otherwise calculate directly from plugin file
+		if (!isset($tw_components_paths)) {
+			$tw_components_paths = [
+				'path' => plugin_dir_path(__FILE__) . 'components',
+				'url'  => plugin_dir_url(__FILE__) . 'components'
+			];
+		}
+		
+		$base = $tw_components_paths['path'] . '/assets';
+		$version = file_exists("$base/styles.css") ? filemtime("$base/styles.css") : '1.0.0';
+		$url = $tw_components_paths['url'] . '/assets';
 
-		wp_enqueue_style('tailwind-scoped-style', TW_PLUGIN_URL . 'assets/plugin.css', [], $version);
+		wp_enqueue_style('tailwind-scoped-style', "$url/styles.css", [], $version);
+		wp_enqueue_script('tailwind-scoped-script', "$url/scripts.js", ['wp-element'], $version, true);
 		
-		wp_enqueue_script('tailwind-scoped-script', TW_PLUGIN_URL . 'assets/plugin.js', ['wp-element'], $version, true);
-		
-		// Fix: Dequeue 'svg-painter' to prevent console errors on this custom React page.
-		// This script depends on DOM elements/globals that might be absent or conflicting.
+		if (isset($tw_component_loader)) {
+			wp_localize_script('tailwind-scoped-script', 'twActiveComponents', [
+				'serverSide' => $tw_component_loader->get_active_server_side_components(),
+			]);
+		}
 		wp_dequeue_script('svg-painter');
 	}
 	
@@ -51,30 +71,22 @@ class Tailwind_Scoped_Plugin {
 		?>
 		<div class="wrap">
 			<hr class="wp-header-end">
-			
-			<!-- Scoped Container for Tailwind -->
-			<div id="tw-plugin-app">
+			<div id="tw-theme-app">
 				<div class="p-6 space-y-6">
-					
-					<!-- Header Section (Static HTML) -->
 					<div class="flex items-center justify-between">
 						<div class="space-y-2">
 							<h1 class="text-3xl font-bold text-foreground">Tailwind Scoped Plugin</h1>
 							<p class="text-muted-foreground">Static HTML with React Islands</p>
 						</div>
-					<!-- Dynamic Theme Toggle Island -->
-					<div data-island="theme-toggle"></div>
-				</div>
-
-				<!-- Navigation Menu -->
-					<div class="flex flex-wrap pt-4 pb-4 border-b">
-						<div data-island="navigation-menu"></div>
+						<div data-island="theme-toggle"></div>
 					</div>
-
-				<!-- Content Section (Mixed) -->
+					<div class="flex flex-wrap pt-4 pb-4 border-b">
+						<?php if (function_exists('tw_render_nav_menu')) : ?>
+							<?php tw_render_nav_menu('primary'); ?>
+						<?php endif; ?>
+					</div>
 					<div class="flex flex-wrap gap-4 pt-4">
 						<div class="flex gap-2">
-							<!-- Static Buttons with Tailwind classes -->
 							<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
 								Static Button
 							</button>
@@ -82,21 +94,15 @@ class Tailwind_Scoped_Plugin {
 								Static Secondary
 							</button>
 						</div>
-
-						<!-- Dynamic Dropdown Menu Island -->
 						<div data-island="dropdown-menu"></div>
 					</div>
-
-					<!-- Sonner Toast Buttons -->
 					<div class="pt-4">
 						<div data-island="sonner-button"></div>
 					</div>
-
-					<!-- Switch Component -->
 					<div class="pt-4">
 						<div data-island="switch"></div>
 					</div>
-					
+					<div data-island="toaster"></div>
 				</div>
 			</div>
 		</div>

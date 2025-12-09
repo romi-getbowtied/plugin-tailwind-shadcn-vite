@@ -12,9 +12,10 @@
 		"noEmit": true,
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./components/src/*"],
+			"@config/*": ["./*"]
 		}
 	},
-	"include": ["src/**/*", "vite.config.ts"],
+	"include": ["components/src/**/*", "vite.config.ts", "client-components.config.tsx"],
 	"exclude": ["node_modules", "assets"]
 }
