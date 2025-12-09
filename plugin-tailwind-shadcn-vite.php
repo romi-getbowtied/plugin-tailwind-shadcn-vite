@@ -13,8 +13,8 @@ if (!defined('ABSPATH')) exit;
 include_once dirname(__FILE__) . '/ui/index.php';
 
 tw_register_components([
-	//'navigation-menu-enhanced',
-	//'hero-parallax-enhanced',
+	'navigation-menu-enhanced',
+	'hero-parallax-enhanced',
 	// 'bento-grid-enhanced',
 	// 'apple-cards-carousel-enhanced',
 ]);
