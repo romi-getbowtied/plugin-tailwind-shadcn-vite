@@ -1,7 +1,7 @@
 /**
- * Client Components Configuration
+ * Islands Configuration
  * 
- * Activate/deactivate client-side React components by modifying this file.
+ * Activate/deactivate React island components by modifying this file.
  * Components listed here will be included in the bundle when you run `npm run build`.
  * 
  * To deactivate a component, comment it out or remove it from the array.
@@ -18,7 +18,7 @@ import { AnimatedTestimonialsDemo } from "@/components/app/client-side/animated-
 // import { ThreeDCardDemo } from "@/components/app/client-side/three-d-card-demo/component";
 
 /**
- * Client-side components registry
+ * React islands registry
  * 
  * Add or remove components from this object to control what gets bundled.
  * Only components listed here will be included in the build.

@@ -12,10 +12,10 @@
 		"noEmit": true,
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./components/src/*"],
+			"@/*": ["./ui/src/*"],
 			"@config/*": ["./*"]
 		}
 	},
-	"include": ["components/src/**/*", "vite.config.ts", "client-components.config.tsx"],
+	"include": ["ui/src/**/*", "vite.config.ts", "islands.config.tsx"],
 	"exclude": ["node_modules", "assets"]
 }
