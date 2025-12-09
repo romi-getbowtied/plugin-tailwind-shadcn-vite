@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) exit;
 add_filter('tw_component_loader_active_components', function($components) {
 	$components['server-side'] = [
 		'navigation-menu-enhanced',
-		// 'hero-parallax-enhanced',
+		'hero-parallax-enhanced',
 		// 'bento-grid-enhanced',
 		// 'apple-cards-carousel-enhanced',
 	];
@@ -42,28 +42,7 @@ class Tailwind_Scoped_Plugin {
 	
 	public function enqueue_assets($hook) {
 		if ($hook !== 'toplevel_page_tailwind-scoped-page') return;
-		global $tw_components_paths, $tw_component_loader;
-		
-		// Use global if available, otherwise calculate directly from plugin file
-		if (!isset($tw_components_paths)) {
-			$tw_components_paths = [
-				'path' => plugin_dir_path(__FILE__) . 'ui',
-				'url'  => plugin_dir_url(__FILE__) . 'ui'
-			];
-		}
-		
-		$base = $tw_components_paths['path'] . '/assets';
-		$version = file_exists("$base/styles.css") ? filemtime("$base/styles.css") : '1.0.0';
-		$url = $tw_components_paths['url'] . '/assets';
-
-		wp_enqueue_style('tailwind-scoped-style', "$url/styles.css", [], $version);
-		wp_enqueue_script('tailwind-scoped-script', "$url/scripts.js", ['wp-element'], $version, true);
-		
-		if (isset($tw_component_loader)) {
-			wp_localize_script('tailwind-scoped-script', 'twActiveComponents', [
-				'serverSide' => $tw_component_loader->get_active_server_side_components(),
-			]);
-		}
+		tw_enqueue_assets($hook);
 		wp_dequeue_script('svg-painter');
 	}
 	
@@ -85,6 +64,11 @@ class Tailwind_Scoped_Plugin {
 							<?php tw_render_nav_menu('primary'); ?>
 						<?php endif; ?>
 					</div>
+				</div>
+				<?php if (function_exists('tw_render_hero_parallax')) : ?>
+					<?php tw_render_hero_parallax(); ?>
+				<?php endif; ?>
+				<div class="p-6 space-y-6">
 					<div class="flex flex-wrap gap-4 pt-4">
 						<div class="flex gap-2">
 							<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
