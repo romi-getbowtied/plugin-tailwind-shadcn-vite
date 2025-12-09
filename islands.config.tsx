@@ -14,7 +14,7 @@ import { DropdownMenuIsland } from "@/components/app/client-side/dropdown-menu-i
 import { SonnerButtonIsland } from "@/components/app/client-side/sonner-button-island/component";
 import { SwitchIsland } from "@/components/app/client-side/switch-island/component";
 import { AnimatedTestimonialsDemo } from "@/components/app/client-side/animated-testimonials-demo/component";
-// import { FloatingDockDemo } from "@/components/app/client-side/floating-dock-demo/component";
+import { FloatingDockDemo } from "@/components/app/client-side/floating-dock-demo/component";
 // import { ThreeDCardDemo } from "@/components/app/client-side/three-d-card-demo/component";
 
 /**
@@ -29,7 +29,7 @@ export const clientComponents = {
 	"sonner-button": SonnerButtonIsland,
 	"switch": SwitchIsland,
 	"animated-testimonials": AnimatedTestimonialsDemo,
-	// "floating-dock": FloatingDockDemo,
+	"floating-dock": FloatingDockDemo,
 	// "three-d-card": ThreeDCardDemo,
 	"toaster": () => <Toaster position="top-center" />,
 } as const;

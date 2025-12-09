@@ -70,6 +70,9 @@ class Tailwind_Scoped_Plugin {
 					</div>
 					<div data-island="toaster"></div>
 					<div data-island="animated-testimonials"></div>
+					<div class="pt-4">
+						<div data-island="floating-dock"></div>
+					</div>
 				</div>
 			</div>
 		</div>
