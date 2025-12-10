@@ -22,7 +22,8 @@ import { enhanceAppleCardsCarousel } from "@/components/app/server-side/apple-ca
 // EXPORTS
 // ============================================================================
 
-// Client-side components
+// Client-side components (React Islands)
+// Use these island names in your HTML: <div data-island="island-name"></div>
 export const clientComponents = {
 	"theme-toggle": ThemeToggle,
 	"dropdown-menu": DropdownMenuIsland,
@@ -34,7 +35,12 @@ export const clientComponents = {
 	"toaster": () => <Toaster position="top-center" />,
 } as const;
 
-// Server-side components
+// Server-side components (Enhancement Functions)
+// Example usage in PHP templates:
+//   <?php TW_Hero_Parallax::render(); ?>
+//   <?php TW_Nav_Menu::render('primary'); ?>
+//   <?php TW_Bento_Grid::render(); ?>
+//   <?php TW_Apple_Cards_Carousel::render(); ?>
 export const serverComponents = {
 	"navigation-menu-enhanced": enhanceNavigationMenu,
 	"hero-parallax-enhanced": enhanceHeroParallax,
