@@ -11,7 +11,6 @@
 if (!defined('ABSPATH')) exit;
 
 include_once dirname(__FILE__) . '/ui/index.php';
-include_once dirname(__FILE__) . '/components.registry.php';
 
 class Tailwind_Scoped_Plugin {
 	public function __construct() {
