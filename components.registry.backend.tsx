@@ -1,8 +1,9 @@
 // ============================================================================
-// IMPORTS
+// BACKEND (ADMIN) COMPONENT REGISTRY
 // ============================================================================
+// Components loaded only in WordPress admin area
 
-// Client-side components
+// Client-side components for admin
 import { ThemeToggle } from "@/components/app/client-side/theme-toggle/component";
 import { Toaster } from "@/components/ui/sonner";
 import { DropdownMenuIsland } from "@/components/app/client-side/dropdown-menu-island/component";
@@ -12,7 +13,7 @@ import { AnimatedTestimonialsDemo } from "@/components/app/client-side/animated-
 import { FloatingDockDemo } from "@/components/app/client-side/floating-dock-demo/component";
 import { ThreeDCardDemo } from "@/components/app/client-side/three-d-card-demo/component";
 
-// Server-side components
+// Server-side component enhancers for admin
 import { navigationMenu } from "@/components/app/server-side/navigation-menu/scripts";
 import { heroParallax } from "@/components/app/server-side/hero-parallax/scripts";
 import { bentoGrid } from "@/components/app/server-side/bento-grid/scripts";
@@ -22,18 +23,19 @@ import { appleCardsCarousel } from "@/components/app/server-side/apple-cards-car
 // EXPORTS
 // ============================================================================
 
-// Client-side components (React Islands)
-// Use these island names in your HTML:
-
-// <div data-island="theme-toggle"></div>
-// <div data-island="dropdown-menu"></div>
-// <div data-island="sonner-button"></div>
-// <div data-island="switch"></div>
-// <div data-island="animated-testimonials"></div>
-// <div data-island="floating-dock"></div>
-// <div data-island="three-d-card"></div>
-// <div data-island="toaster"></div>
-
+/**
+ * Backend client-side components (React Islands)
+ * Use these island names in admin PHP templates:
+ *
+ * <div data-island="theme-toggle"></div>
+ * <div data-island="dropdown-menu"></div>
+ * <div data-island="sonner-button"></div>
+ * <div data-island="switch"></div>
+ * <div data-island="animated-testimonials"></div>
+ * <div data-island="floating-dock"></div>
+ * <div data-island="three-d-card"></div>
+ * <div data-island="toaster"></div>
+ */
 export const clientComponents = {
 	"theme-toggle": ThemeToggle,
 	"dropdown-menu": DropdownMenuIsland,
@@ -45,14 +47,10 @@ export const clientComponents = {
 	"toaster": () => <Toaster position="top-center" />,
 } as const;
 
-// Server-side components with enhanced functionality
-// Example usage in PHP templates:
-
-// <?php TW_Hero_Parallax::render(); ?>
-// <?php TW_Nav_Menu::render('primary'); ?>
-// <?php TW_Bento_Grid::render(); ?>
-// <?php TW_Apple_Cards_Carousel::render(); ?>
-
+/**
+ * Backend server-side component enhancers
+ * These enhance PHP-rendered components with JS functionality
+ */
 export const serverComponents = {
 	"navigation-menu": navigationMenu,
 	"hero-parallax": heroParallax,

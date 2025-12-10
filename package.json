@@ -4,8 +4,12 @@
 	"description": "WordPress plugin with Tailwind 4 scoped styling",
 	"type": "module",
 	"scripts": {
-		"dev": "vite build --watch",
-		"build": "vite build"
+		"dev": "npm run dev:frontend & npm run dev:backend",
+		"dev:frontend": "cross-env BUILD_TARGET=frontend vite build --watch",
+		"dev:backend": "cross-env BUILD_TARGET=backend vite build --watch",
+		"build": "npm run build:frontend && npm run build:backend",
+		"build:frontend": "cross-env BUILD_TARGET=frontend vite build",
+		"build:backend": "cross-env BUILD_TARGET=backend vite build"
 	},
 	"devDependencies": {
 		"@tailwindcss/vite": "^4.1.17",
@@ -13,6 +17,7 @@
 		"@types/react": "18.3.27",
 		"@types/react-dom": "18.3.7",
 		"@vitejs/plugin-react": "^5.1.1",
+		"cross-env": "^7.0.3",
 		"shadcn": "^3.5.1",
 		"tailwindcss": "^4.1.17",
 		"tailwindcss-animate": "^1.0.7",
