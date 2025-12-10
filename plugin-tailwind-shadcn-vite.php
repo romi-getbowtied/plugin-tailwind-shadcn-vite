@@ -29,7 +29,7 @@ class Tailwind_Scoped_Plugin {
 		?>
 		<div class="wrap">
 			<hr class="wp-header-end">
-			<div id="tw-theme-app">
+			<div id="gbt-ui-app">
 				<div class="p-6 space-y-6">
 					<div class="flex items-center justify-between">
 						<div class="space-y-2">

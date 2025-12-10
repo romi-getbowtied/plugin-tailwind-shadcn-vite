@@ -9,6 +9,6 @@ export default {
 		"./ui/src/components.tsx",
 		"./ui/src/styles/**/*.css",
 	],
-	important: "#tw-theme-app",
+	important: "#gbt-ui-app",
 	plugins: [tailwindcssAnimate],
 };
