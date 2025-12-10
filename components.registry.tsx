@@ -23,7 +23,17 @@ import { appleCardsCarousel } from "@/components/app/server-side/apple-cards-car
 // ============================================================================
 
 // Client-side components (React Islands)
-// Use these island names in your HTML: <div data-island="island-name"></div>
+// Use these island names in your HTML:
+
+// <div data-island="theme-toggle"></div>
+// <div data-island="dropdown-menu"></div>
+// <div data-island="sonner-button"></div>
+// <div data-island="switch"></div>
+// <div data-island="animated-testimonials"></div>
+// <div data-island="floating-dock"></div>
+// <div data-island="three-d-card"></div>
+// <div data-island="toaster"></div>
+
 export const clientComponents = {
 	"theme-toggle": ThemeToggle,
 	"dropdown-menu": DropdownMenuIsland,
@@ -35,12 +45,14 @@ export const clientComponents = {
 	"toaster": () => <Toaster position="top-center" />,
 } as const;
 
-// Server-side components (Enhancement Functions)
+// Server-side components with enhanced functionality
 // Example usage in PHP templates:
-//   <?php TW_Hero_Parallax::render(); ?>
-//   <?php TW_Nav_Menu::render('primary'); ?>
-//   <?php TW_Bento_Grid::render(); ?>
-//   <?php TW_Apple_Cards_Carousel::render(); ?>
+
+// <?php TW_Hero_Parallax::render(); ?>
+// <?php TW_Nav_Menu::render('primary'); ?>
+// <?php TW_Bento_Grid::render(); ?>
+// <?php TW_Apple_Cards_Carousel::render(); ?>
+
 export const serverComponents = {
 	"navigation-menu": navigationMenu,
 	"hero-parallax": heroParallax,
