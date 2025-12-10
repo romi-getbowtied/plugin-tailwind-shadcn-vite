@@ -17,9 +17,7 @@ import { appleCardsCarousel } from "@/components/app/server-side/apple-cards-car
 // ============================================================================
 
 /**
- * Frontend client-side components (React Islands)
- * Use these island names in theme PHP templates:
- *
+ * React Islands - Use in PHP:
  * <div data-island="theme-toggle"></div>
  * <div data-island="three-d-card"></div>
  * <div data-island="toaster"></div>
@@ -31,8 +29,9 @@ export const clientComponents = {
 } as const;
 
 /**
- * Frontend server-side component enhancers
- * These enhance PHP-rendered components with JS functionality
+ * Server Enhancers - Use in PHP:
+ * <?php TW_Hero_Parallax::render(); ?>
+ * <?php TW_Apple_Cards_Carousel::render(); ?>
  */
 export const serverComponents = {
 	"hero-parallax": heroParallax,
