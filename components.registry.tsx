@@ -42,7 +42,3 @@ export const serverComponents = {
 	"apple-cards-carousel-enhanced": enhanceAppleCardsCarousel,
 } as const;
 
-// Types
-export type ClientComponentSlug = keyof typeof clientComponents;
-export type ServerComponentSlug = keyof typeof serverComponents;
-

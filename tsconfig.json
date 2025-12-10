@@ -1,21 +1,21 @@
 {
 	"compilerOptions": {
 		"target": "ES2020",
-		"module": "ESNext",
 		"lib": ["ES2020", "DOM", "DOM.Iterable"],
 		"jsx": "react-jsx",
+		"module": "ESNext",
 		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
 		"strict": true,
-		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"isolatedModules": true,
 		"noEmit": true,
+		"esModuleInterop": true,
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./ui/src/*"],
 			"@config/*": ["./*"]
 		}
 	},
-	"include": ["ui/src/**/*", "vite.config.ts", "components.registry.tsx"],
-	"exclude": ["node_modules", "assets"]
+	"include": ["ui/src/**/*", "vite.config.ts", "components.registry.tsx"]
 }
