@@ -16,8 +16,6 @@ require_once dirname(__FILE__) . '/ui/index.php';
 
 class Tailwind_Scoped_Plugin {
 	public function __construct() {
-		TW_Tools::init(__FILE__);
-		new TW_Assets();
 
 		add_action('admin_menu', fn() => add_menu_page(
 			'Tailwind Page',

@@ -4,8 +4,11 @@ if (!defined('ABSPATH')) exit;
 class TW_Tools {
 	private static $data;
 
-	public static function init($file) {
+	private static function init() {
 		if (self::$data) return;
+
+		$root = dirname(dirname(__FILE__));
+		$file = glob("$root/*.php")[0] ?? '';
 
 		$headers = get_file_data($file, [
 			'name' => 'Plugin Name',
@@ -22,7 +25,7 @@ class TW_Tools {
 	}
 
 	public static function get($key) {
+		self::init();
 		return self::$data[$key] ?? null;
 	}
 }
-

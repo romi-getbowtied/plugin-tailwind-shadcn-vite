@@ -16,3 +16,5 @@ class TW_Assets {
 		wp_enqueue_script("tw-$source-$context", "$url/ui/assets/$context/scripts.js", ['wp-element'], $version, true);
 	}
 }
+
+new TW_Assets();
