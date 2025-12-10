@@ -32,7 +32,8 @@
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"lucide-react": "^0.556.0",
-		"motion": "^12.23.25",
+		"motion": "^12.23.26",
+		"simplex-noise": "^4.0.3",
 		"sonner": "^2.0.7",
 		"tailwind-merge": "^3.4.0"
 	}
