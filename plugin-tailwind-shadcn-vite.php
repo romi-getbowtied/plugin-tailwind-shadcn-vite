@@ -42,10 +42,10 @@ class Tailwind_Scoped_Plugin {
 					<div data-island="theme-toggle"></div>
 				</div>
 					<div class="flex flex-wrap pt-4 pb-4 border-b">
-						<?php GBT_Nav_Menu::render('primary'); ?>
+						<?php GBT_Component_Nav_Menu::render('primary'); ?>
 					</div>
 				</div>
-				<?php GBT_Hero_Parallax::render(); ?>
+				<?php GBT_Component_Hero_Parallax::render(); ?>
 				<div class="p-6 space-y-6">
 					<div class="flex flex-wrap gap-4 pt-4">
 						<div class="flex gap-2">
