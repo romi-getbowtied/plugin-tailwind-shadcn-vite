@@ -1,7 +1,6 @@
 {
-	"name": "tailwind-scoped-plugin",
+	"name": "plugin",
 	"version": "1.0.0",
-	"description": "WordPress plugin with Tailwind 4 scoped styling",
 	"type": "module",
 	"scripts": {
 		"dev": "npm run dev:frontend & npm run dev:backend",

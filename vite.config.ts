@@ -7,7 +7,7 @@ const target = (process.env.BUILD_TARGET ?? "frontend") as "frontend" | "backend
 
 export default defineConfig({
 	plugins: [react(), tailwindcss()],
-	define: { REGISTRY: JSON.stringify(`@config/components.registry.${target}`) },
+	define: { REGISTRY: JSON.stringify(`@config/components/ui/registry.${target}`) },
 	resolve: {
 		alias: {
 			"@": path.resolve(__dirname, "./ui/src"),
