@@ -30,8 +30,8 @@ export const clientComponents = {
 
 /**
  * Server Enhancers - Use in PHP:
- * <?php TW_Hero_Parallax::render(); ?>
- * <?php TW_Apple_Cards_Carousel::render(); ?>
+ * <?php GBT_Hero_Parallax::render(); ?>
+ * <?php GBT_Apple_Cards_Carousel::render(); ?>
  */
 export const serverComponents = {
 	"hero-parallax": heroParallax,

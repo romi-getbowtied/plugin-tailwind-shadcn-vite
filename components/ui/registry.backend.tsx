@@ -47,10 +47,10 @@ export const clientComponents = {
 
 /**
  * Server Enhancers - Use in PHP:
- * <?php TW_Nav_Menu::render('primary'); ?>
- * <?php TW_Hero_Parallax::render(); ?>
- * <?php TW_Bento_Grid::render(); ?>
- * <?php TW_Apple_Cards_Carousel::render(); ?>
+ * <?php GBT_Nav_Menu::render('primary'); ?>
+ * <?php GBT_Hero_Parallax::render(); ?>
+ * <?php GBT_Bento_Grid::render(); ?>
+ * <?php GBT_Apple_Cards_Carousel::render(); ?>
  */
 export const serverComponents = {
 	"navigation-menu": navigationMenu,

@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
-class TW_Tools {
+class GBT_Tools {
 	private static $data;
 
 	private static function init() {
