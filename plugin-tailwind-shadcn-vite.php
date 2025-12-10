@@ -69,9 +69,6 @@ class Tailwind_Scoped_Plugin {
 					<div class="pt-4">
 						<div data-island="floating-dock"></div>
 					</div>
-					<div class="pt-4">
-						<div data-island="vortex-demo-second"></div>
-					</div>
 				</div>
 			</div>
 		</div>
