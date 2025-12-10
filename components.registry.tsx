@@ -13,10 +13,10 @@ import { FloatingDockDemo } from "@/components/app/client-side/floating-dock-dem
 import { ThreeDCardDemo } from "@/components/app/client-side/three-d-card-demo/component";
 
 // Server-side components
-import { enhanceNavigationMenu } from "@/components/app/server-side/navigation-menu-enhanced/scripts";
-import { enhanceHeroParallax } from "@/components/app/server-side/hero-parallax-enhanced/scripts";
-import { enhanceBentoGrid } from "@/components/app/server-side/bento-grid-enhanced/scripts";
-import { enhanceAppleCardsCarousel } from "@/components/app/server-side/apple-cards-carousel-enhanced/scripts";
+import { navigationMenu } from "@/components/app/server-side/navigation-menu/scripts";
+import { heroParallax } from "@/components/app/server-side/hero-parallax/scripts";
+import { bentoGrid } from "@/components/app/server-side/bento-grid/scripts";
+import { appleCardsCarousel } from "@/components/app/server-side/apple-cards-carousel/scripts";
 
 // ============================================================================
 // EXPORTS
@@ -42,9 +42,9 @@ export const clientComponents = {
 //   <?php TW_Bento_Grid::render(); ?>
 //   <?php TW_Apple_Cards_Carousel::render(); ?>
 export const serverComponents = {
-	"navigation-menu-enhanced": enhanceNavigationMenu,
-	"hero-parallax-enhanced": enhanceHeroParallax,
-	"bento-grid-enhanced": enhanceBentoGrid,
-	"apple-cards-carousel-enhanced": enhanceAppleCardsCarousel,
+	"navigation-menu": navigationMenu,
+	"hero-parallax": heroParallax,
+	"bento-grid": bentoGrid,
+	"apple-cards-carousel": appleCardsCarousel,
 } as const;
 
