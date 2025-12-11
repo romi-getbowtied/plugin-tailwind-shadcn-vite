@@ -65,7 +65,20 @@ class Tailwind_Scoped_Plugin {
 						<div data-island="floating-dock"></div>
 					</div>
 					<div class="pt-4">
-						<div data-island="radial-menu-demo"></div>
+						<?php
+						$menu_items = [
+							['id' => 1, 'label' => 'Copy', 'icon' => 'Copy'],
+							['id' => 2, 'label' => 'Cut', 'icon' => 'Scissors'],
+							['id' => 3, 'label' => 'Paste', 'icon' => 'ClipboardPaste'],
+							['id' => 4, 'label' => 'Favorite', 'icon' => 'Star'],
+							['id' => 5, 'label' => 'Pin', 'icon' => 'Pin'],
+							['id' => 6, 'label' => 'Delete', 'icon' => 'Trash2'],
+						];
+						?>
+						<div 
+							data-island="radial-menu-demo" 
+							data-props="<?php echo esc_attr(json_encode(['menuItems' => $menu_items])); ?>"
+						></div>
 					</div>
 				</div>
 			</div>
