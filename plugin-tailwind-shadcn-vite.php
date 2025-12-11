@@ -39,10 +39,7 @@ class Tailwind_Scoped_Plugin {
 							<h1 class="text-3xl font-bold text-foreground">Tailwind Scoped Plugin</h1>
 							<p class="text-muted-foreground">Static HTML with React Islands</p>
 						</div>
-					<div data-island="theme-toggle"></div>
-				</div>
-					<div class="flex flex-wrap pt-4 pb-4 border-b">
-						<?php GBT_Component_Nav_Menu::render('primary'); ?>
+						<div data-island="theme-toggle"></div>
 					</div>
 				</div>
 				<div class="p-6 space-y-6">
