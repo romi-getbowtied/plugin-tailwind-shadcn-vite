@@ -110,7 +110,7 @@ class Tailwind_Scoped_Plugin {
 							data-island="stack-demo" 
 							data-props="<?php echo UI_Tools::data_props([
 								'images' => $images,
-								'randomRotation' => true,
+								'randomRotation' => false,
 								'sensitivity' => 180,
 								'sendToBackOnClick' => true,
 								'animationConfig' => [
