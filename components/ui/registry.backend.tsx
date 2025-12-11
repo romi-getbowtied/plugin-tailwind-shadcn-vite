@@ -13,7 +13,6 @@ import { FloatingDockDemo } from "@/components/app/client-side/floating-dock-dem
 
 // Server-side component enhancers for admin
 import { navigationMenu } from "@/components/app/server-side/navigation-menu/scripts";
-import { bentoGrid } from "@/components/app/server-side/bento-grid/scripts";
 
 // ============================================================================
 // EXPORTS
@@ -40,9 +39,7 @@ export const clientComponents = {
 /**
  * Server Enhancers - Use in PHP:
  * <?php GBT_Component_Nav_Menu::render('primary'); ?>
- * <?php GBT_Component_Bento_Grid::render(); ?>
  */
 export const serverComponents = {
 	"navigation-menu": navigationMenu,
-	"bento-grid": bentoGrid,
 } as const;
