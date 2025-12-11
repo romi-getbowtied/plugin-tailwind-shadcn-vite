@@ -75,10 +75,10 @@ class Tailwind_Scoped_Plugin {
 						?>
 						<div 
 							data-island="floating-dock" 
-							data-props="<?php echo esc_attr(json_encode([
+							data-props="<?php echo UI_Tools::data_props([
 								'items' => $dock_items,
 								'mobileClassName' => 'translate-y-20'
-							])); ?>"
+							]); ?>"
 						></div>
 					</div>
 					<div class="pt-4">
@@ -94,7 +94,7 @@ class Tailwind_Scoped_Plugin {
 						?>
 						<div 
 							data-island="radial-menu-demo" 
-							data-props="<?php echo esc_attr(json_encode(['menuItems' => $menu_items])); ?>"
+							data-props="<?php echo UI_Tools::data_props(['menuItems' => $menu_items]); ?>"
 						></div>
 					</div>
 				</div>
