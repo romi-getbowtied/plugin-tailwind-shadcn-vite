@@ -13,7 +13,6 @@ import { FloatingDockDemo } from "@/components/app/client-side/floating-dock-dem
 
 // Server-side component enhancers for admin
 import { navigationMenu } from "@/components/app/server-side/navigation-menu/scripts";
-import { heroParallax } from "@/components/app/server-side/hero-parallax/scripts";
 import { bentoGrid } from "@/components/app/server-side/bento-grid/scripts";
 import { appleCardsCarousel } from "@/components/app/server-side/apple-cards-carousel/scripts";
 
@@ -42,13 +41,11 @@ export const clientComponents = {
 /**
  * Server Enhancers - Use in PHP:
  * <?php GBT_Component_Nav_Menu::render('primary'); ?>
- * <?php GBT_Component_Hero_Parallax::render(); ?>
  * <?php GBT_Component_Bento_Grid::render(); ?>
  * <?php GBT_Component_Apple_Cards_Carousel::render(); ?>
  */
 export const serverComponents = {
 	"navigation-menu": navigationMenu,
-	"hero-parallax": heroParallax,
 	"bento-grid": bentoGrid,
 	"apple-cards-carousel": appleCardsCarousel,
 } as const;
