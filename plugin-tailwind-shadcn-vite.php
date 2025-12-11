@@ -62,7 +62,24 @@ class Tailwind_Scoped_Plugin {
 					</div>
 					<div data-island="toaster"></div>
 					<div class="pt-4">
-						<div data-island="floating-dock"></div>
+						<?php
+						$dock_items = [
+							['title' => 'Home', 'icon' => 'IconHome', 'href' => 'https://www.google.com'],
+							['title' => 'Products', 'icon' => 'IconTerminal2', 'href' => '#'],
+							['title' => 'Components', 'icon' => 'IconNewSection', 'href' => '#'],
+							['title' => 'Aceternity UI', 'icon' => 'https://img.icons8.com/search', 'href' => '#'],
+							['title' => 'Changelog', 'icon' => 'IconExchange', 'href' => '#'],
+							['title' => 'Twitter', 'icon' => 'IconBrandX', 'href' => '#'],
+							['title' => 'GitHub', 'icon' => 'IconBrandGithub', 'href' => '#'],
+						];
+						?>
+						<div 
+							data-island="floating-dock" 
+							data-props="<?php echo esc_attr(json_encode([
+								'items' => $dock_items,
+								'mobileClassName' => 'translate-y-20'
+							])); ?>"
+						></div>
 					</div>
 					<div class="pt-4">
 						<?php
