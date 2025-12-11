@@ -8,8 +8,6 @@ import { ThemeToggle } from "@/components/app/client-side/theme-toggle/component
 import { Toaster } from "@/components/ui/sonner";
 
 // Server-side component enhancers for frontend
-import { heroParallax } from "@/components/app/server-side/hero-parallax/scripts";
-import { appleCardsCarousel } from "@/components/app/server-side/apple-cards-carousel/scripts";
 
 // ============================================================================
 // EXPORTS
@@ -27,11 +25,6 @@ export const clientComponents = {
 
 /**
  * Server Enhancers - Use in PHP:
- * <?php GBT_Component_Hero_Parallax::render(); ?>
- * <?php GBT_Component_Apple_Cards_Carousel::render(); ?>
  */
 export const serverComponents = {
-	"hero-parallax": heroParallax,
-	"apple-cards-carousel": appleCardsCarousel,
 } as const;
-
