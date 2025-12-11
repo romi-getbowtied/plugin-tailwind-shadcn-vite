@@ -97,6 +97,36 @@ class Tailwind_Scoped_Plugin {
 							data-props="<?php echo UI_Tools::data_props(['menuItems' => $menu_items]); ?>"
 						></div>
 					</div>
+					<div class="pt-4">
+						<?php
+						$images = [
+							'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format',
+							'https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format',
+							'https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format',
+							'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format',
+						];
+						?>
+						<div 
+							data-island="stack-demo" 
+							data-props="<?php echo UI_Tools::data_props([
+								'images' => $images,
+								'randomRotation' => true,
+								'sensitivity' => 180,
+								'sendToBackOnClick' => true,
+								'animationConfig' => [
+									'stiffness' => 260,
+									'damping' => 20
+								],
+								'autoplay' => true,
+								'autoplayDelay' => 1000,
+								'pauseOnHover' => true,
+								'dragElastic' => 0.3,
+								'dragEnabled' => true,
+								'width' => 250,
+								'height' => 250
+							]); ?>"
+						></div>
+					</div>
 				</div>
 			</div>
 		</div>

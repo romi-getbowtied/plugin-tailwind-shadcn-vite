@@ -11,6 +11,7 @@ import { SonnerButtonIsland } from "@/components/app/client-side/sonner-button-i
 import { SwitchIsland } from "@/components/app/client-side/switch-island/component";
 import { FloatingDockDemo } from "@/components/app/client-side/floating-dock-demo/component";
 import { RadialMenuDemo } from "@/components/app/client-side/radial-menu-demo/component";
+import { StackDemo } from "@/components/app/client-side/stack-demo/component";
 
 // Server-side component enhancers for admin
 import { navigationMenu } from "@/components/app/server-side/navigation-menu/scripts";
@@ -27,6 +28,7 @@ import { navigationMenu } from "@/components/app/server-side/navigation-menu/scr
  * <div data-island="switch"></div>
  * <div data-island="floating-dock"></div>
  * <div data-island="radial-menu-demo"></div>
+ * <div data-island="stack-demo"></div>
  * <div data-island="toaster"></div>
  */
 export const clientComponents = {
@@ -36,6 +38,7 @@ export const clientComponents = {
 	"switch": SwitchIsland,
 	"floating-dock": FloatingDockDemo,
 	"radial-menu-demo": RadialMenuDemo,
+	"stack-demo": StackDemo,
 	"toaster": () => <Toaster position="top-center" />,
 } as const;
 
