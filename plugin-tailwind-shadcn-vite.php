@@ -64,6 +64,9 @@ class Tailwind_Scoped_Plugin {
 					<div class="pt-4">
 						<div data-island="floating-dock"></div>
 					</div>
+					<div class="pt-4">
+						<div data-island="radial-menu-demo"></div>
+					</div>
 				</div>
 			</div>
 		</div>
