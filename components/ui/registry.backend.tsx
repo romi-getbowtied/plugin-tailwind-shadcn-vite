@@ -15,6 +15,7 @@ import { StackDemo } from "@/components/app/client-side/stack-demo/component";
 
 // Server-side component enhancers for admin
 import { navigationMenu } from "@/components/app/server-side/navigation-menu/scripts";
+import { expandableCardDemo } from "@/components/app/server-side/expandable-card-demo/scripts";
 
 // ============================================================================
 // EXPORTS
@@ -45,7 +46,9 @@ export const clientComponents = {
 /**
  * Server Enhancers - Use in PHP:
  * <?php GBT_Component_Nav_Menu::render('primary'); ?>
+ * <?php GBT_Component_Expandable_Card_Demo::render($cards); ?>
  */
 export const serverComponents = {
 	"navigation-menu": navigationMenu,
+	"expandable-card-demo": expandableCardDemo,
 } as const;
