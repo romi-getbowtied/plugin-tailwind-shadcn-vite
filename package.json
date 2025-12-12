@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "npm run dev:frontend & npm run dev:backend",
+		"dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
 		"dev:frontend": "cross-env BUILD_TARGET=frontend vite build --watch",
 		"dev:backend": "cross-env BUILD_TARGET=backend vite build --watch",
 		"build": "npm run build:frontend && npm run build:backend",
@@ -16,6 +16,7 @@
 		"@types/react": "18.3.27",
 		"@types/react-dom": "18.3.7",
 		"@vitejs/plugin-react": "^5.1.1",
+		"concurrently": "^9.2.1",
 		"cross-env": "^7.0.3",
 		"shadcn": "^3.5.1",
 		"tailwindcss": "^4.1.17",
