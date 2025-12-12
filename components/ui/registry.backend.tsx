@@ -23,13 +23,13 @@ import { expandableCardDemo } from "@/components/app/server-side/expandable-card
 
 /**
  * React Islands - Use in PHP:
- * <div data-island="theme-toggle"></div>
- * <div data-island="dropdown-menu"></div>
- * <div data-island="sonner-button"></div>
- * <div data-island="switch"></div>
- * <div data-island="floating-dock"></div>
- * <div data-island="radial-menu-demo"></div>
- * <div data-island="stack-demo"></div>
+ * <?php UI_Tools::render_island('theme-toggle'); ?>
+ * <?php UI_Tools::render_island('dropdown-menu'); ?>
+ * <?php UI_Tools::render_island('sonner-button'); ?>
+ * <?php UI_Tools::render_island('switch'); ?>
+ * <?php UI_Tools::render_island('floating-dock', ['items' => $dock_items]); ?>
+ * <?php UI_Tools::render_island('radial-menu-demo', ['menuItems' => $menu_items]); ?>
+ * <?php UI_Tools::render_island('stack-demo', ['images' => $images, 'width' => 250]); ?>
  * <div data-island="toaster"></div>
  */
 export const clientComponents = {

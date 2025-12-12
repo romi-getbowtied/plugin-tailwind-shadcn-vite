@@ -16,8 +16,8 @@ import { StackDemo } from "@/components/app/client-side/stack-demo/component";
 
 /**
  * React Islands - Use in PHP:
- * <div data-island="theme-toggle"></div>
- * <div data-island="stack-demo"></div>
+ * <?php UI_Tools::render_island('theme-toggle'); ?>
+ * <?php UI_Tools::render_island('stack-demo', ['images' => $images, 'width' => 250]); ?>
  * <div data-island="toaster"></div>
  */
 export const clientComponents = {
