@@ -13,6 +13,7 @@ if (!defined('ABSPATH')) exit;
 require_once dirname(__FILE__) . '/inc/class-tools.php';
 require_once dirname(__FILE__) . '/inc/class-assets.php';
 require_once dirname(__FILE__) . '/ui/index.php';
+require_once dirname(__FILE__) . '/frontpage.php';
 
 class Tailwind_Scoped_Plugin {
 	public function __construct() {
