@@ -39,7 +39,7 @@ class Tailwind_Scoped_Plugin {
 							<h1 class="text-3xl font-bold text-foreground">Tailwind Scoped Plugin</h1>
 							<p class="text-muted-foreground">Static HTML with React Islands</p>
 						</div>
-						<div data-island="theme-toggle"></div>
+						<?php UI_Tools::render_island('theme-toggle'); ?>
 					</div>
 				</div>
 				<div class="p-6 space-y-6">
@@ -78,13 +78,13 @@ class Tailwind_Scoped_Plugin {
 								Static Secondary
 							</button>
 						</div>
-						<div data-island="dropdown-menu"></div>
+						<?php UI_Tools::render_island('dropdown-menu'); ?>
 					</div>
 					<div class="pt-4">
-						<div data-island="sonner-button"></div>
+						<?php UI_Tools::render_island('sonner-button'); ?>
 					</div>
 					<div class="pt-4">
-						<div data-island="switch"></div>
+						<?php UI_Tools::render_island('switch'); ?>
 					</div>
 					<div data-island="toaster"></div>
 					<div class="pt-4">
@@ -98,14 +98,11 @@ class Tailwind_Scoped_Plugin {
 							['title' => 'Twitter', 'icon' => 'IconBrandX', 'href' => '#'],
 							['title' => 'GitHub', 'icon' => 'IconBrandGithub', 'href' => '#'],
 						];
+						UI_Tools::render_island('floating-dock', [
+							'items' => $dock_items,
+							'mobileClassName' => 'translate-y-20'
+						]);
 						?>
-						<div 
-							data-island="floating-dock" 
-							data-props="<?php echo UI_Tools::data_props([
-								'items' => $dock_items,
-								'mobileClassName' => 'translate-y-20'
-							]); ?>"
-						></div>
 					</div>
 					<div class="pt-4">
 						<?php
@@ -117,11 +114,8 @@ class Tailwind_Scoped_Plugin {
 							['id' => 5, 'label' => 'Pin', 'icon' => 'Pin'],
 							['id' => 6, 'label' => 'Delete', 'icon' => 'Trash2'],
 						];
+						UI_Tools::render_island('radial-menu-demo', ['menuItems' => $menu_items]);
 						?>
-						<div 
-							data-island="radial-menu-demo" 
-							data-props="<?php echo UI_Tools::data_props(['menuItems' => $menu_items]); ?>"
-						></div>
 					</div>
 					<div class="pt-4">
 						<?php
@@ -131,27 +125,24 @@ class Tailwind_Scoped_Plugin {
 							'https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format',
 							'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format',
 						];
+						UI_Tools::render_island('stack-demo', [
+							'images' => $images,
+							'randomRotation' => false,
+							'sensitivity' => 180,
+							'sendToBackOnClick' => true,
+							'animationConfig' => [
+								'stiffness' => 260,
+								'damping' => 20
+							],
+							'autoplay' => true,
+							'autoplayDelay' => 1000,
+							'pauseOnHover' => true,
+							'dragElastic' => 0.3,
+							'dragEnabled' => true,
+							'width' => 250,
+							'height' => 250
+						]);
 						?>
-						<div 
-							data-island="stack-demo" 
-							data-props="<?php echo UI_Tools::data_props([
-								'images' => $images,
-								'randomRotation' => false,
-								'sensitivity' => 180,
-								'sendToBackOnClick' => true,
-								'animationConfig' => [
-									'stiffness' => 260,
-									'damping' => 20
-								],
-								'autoplay' => true,
-								'autoplayDelay' => 1000,
-								'pauseOnHover' => true,
-								'dragElastic' => 0.3,
-								'dragEnabled' => true,
-								'width' => 250,
-								'height' => 250
-							]); ?>"
-						></div>
 					</div>
 				</div>
 			</div>
