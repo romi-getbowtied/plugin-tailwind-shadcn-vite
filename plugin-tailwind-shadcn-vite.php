@@ -62,38 +62,6 @@ class Tailwind_Scoped_Plugin {
 								'ctaLink' => 'https://ui.aceternity.com/templates',
 								'content' => 'Babu Maan, a legendary Punjabi singer, is renowned for his soulful voice and profound lyrics that resonate deeply with his audience. Born in the village of Khant Maanpur in Punjab, India, he has become a cultural icon in the Punjabi music industry.',
 							],
-							[
-								'title' => 'For Whom The Bell Tolls',
-								'description' => 'Metallica',
-								'src' => 'https://assets.aceternity.com/demos/metallica.jpeg',
-								'ctaText' => 'Play',
-								'ctaLink' => 'https://ui.aceternity.com/templates',
-								'content' => 'Metallica, an iconic American heavy metal band, is renowned for their powerful sound and intense performances that resonate deeply with their audience. Formed in Los Angeles, California, they have become a cultural icon in the heavy metal music industry.',
-							],
-							[
-								'title' => 'For Whom The Bell Tolls',
-								'description' => 'Metallica',
-								'src' => 'https://assets.aceternity.com/demos/metallica.jpeg',
-								'ctaText' => 'Play',
-								'ctaLink' => 'https://ui.aceternity.com/templates',
-								'content' => 'Metallica, an iconic American heavy metal band, is renowned for their powerful sound and intense performances that resonate deeply with their audience. Formed in Los Angeles, California, they have become a cultural icon in the heavy metal music industry.',
-							],
-							[
-								'title' => 'For Whom The Bell Tolls',
-								'description' => 'Metallica',
-								'src' => 'https://assets.aceternity.com/demos/metallica.jpeg',
-								'ctaText' => 'Play',
-								'ctaLink' => 'https://ui.aceternity.com/templates',
-								'content' => 'Metallica, an iconic American heavy metal band, is renowned for their powerful sound and intense performances that resonate deeply with their audience. Formed in Los Angeles, California, they have become a cultural icon in the heavy metal music industry.',
-							],
-							[
-								'title' => 'For Whom The Bell Tolls',
-								'description' => 'Metallica',
-								'src' => 'https://assets.aceternity.com/demos/metallica.jpeg',
-								'ctaText' => 'Play',
-								'ctaLink' => 'https://ui.aceternity.com/templates',
-								'content' => 'Metallica, an iconic American heavy metal band, is renowned for their powerful sound and intense performances that resonate deeply with their audience. Formed in Los Angeles, California, they have become a cultural icon in the heavy metal music industry.',
-							],
 						];
 						GBT_Component_Expandable_Card_Demo::render($expandable_cards, [
 							'thumbnailWidth' => 80,
