@@ -100,8 +100,7 @@ class Tailwind_Scoped_Plugin {
 							['title' => 'GitHub', 'icon' => 'IconBrandGithub', 'href' => '#'],
 						];
 						UI_Tools::render_island('floating-dock', [
-							'items' => $dock_items,
-							'mobileClassName' => 'translate-y-20'
+							'items' => $dock_items
 						]);
 						?>
 					</div>
