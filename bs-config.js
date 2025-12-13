@@ -1,5 +1,5 @@
 module.exports = {
-  proxy: "localhost",
+  proxy: "plugin-tailwind-shadcn-vite.develop",
   files: ["**/*.php", "ui/assets/**/*.js", "ui/assets/**/*.css"],
   //reloadDelay: 1000,
   //open: false,

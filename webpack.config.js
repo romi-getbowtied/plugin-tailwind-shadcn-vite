@@ -16,6 +16,7 @@ module.exports = {
     ...defaultConfig.output,
     path: path.resolve(__dirname, `ui/assets/${buildTarget}`),
     filename: 'scripts.js',
+    clean: false, // Don't clean output directory - we handle CSS separately
   },
   resolve: {
     ...defaultConfig.resolve,
