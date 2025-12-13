@@ -13,7 +13,7 @@ class GBT_Assets {
 		$version = GBT_Tools::get('version');
 		
 		wp_enqueue_style("gbt-$source-$context", "$url/ui/assets/$context/styles.css", [], $version);
-		wp_enqueue_script("gbt-$source-$context", "$url/ui/assets/$context/scripts.js", ['wp-element'], $version, true);
+		wp_enqueue_script("gbt-$source-$context", "$url/ui/assets/$context/scripts.js", ['wp-element', 'react-jsx-runtime'], $version, true);
 	}
 }
 
